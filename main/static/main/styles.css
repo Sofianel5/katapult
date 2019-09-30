@@ -94,6 +94,7 @@
 }
 body {
   margin: 0;
+  font-family: 'Red Hat Text', sans-serif;
 }
 header {
     position: fixed;
@@ -318,10 +319,82 @@ html {
   height: 100%;
 }
 .hunned-width {
-  width: 100%
+  width: 100%;
 }
 .infotitle {
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 600;
   text-align: center;
+}
+.start-btn {
+  color: #F14621;
+  margin: 0 1vw;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border: 2px solid #F14621;
+  border-radius: 20px;
+  padding: 1vh 1vw;
+  cursor: pointer;
+  color: black;
+}
+.start-btn:hover {
+  color: white;
+  background-color: #F14621;
+}
+.invisible-link {
+  color: inherit;
+  text-decoration: none;
+}
+.content-section {
+  width: 50vw;
+  -moz-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+  border-radius: 20px;
+  margin-top: 5vh;
+}
+.formtitle {
+  font-size: 1.75vw;
+  margin-bottom: 2vh;
+}
+.formsubtitle {
+  font-family: 'Red Hat Text', sans-serif;
+  margin-top: 1vh;
+}
+input {
+    font-size: 1.3vw;
+    padding: 0.25vh 0.25vw;
+    margin-top: 1vh;
+    height: 3.5vh;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 20vw;
+}
+input:focus {
+    outline: none;
+}
+.submitbtn {
+  color: #F14621;
+  margin: 0 1vw;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border: 2px solid #F14621;
+  border-radius: 20px;
+  padding: 1vh 1vw;
+  cursor: pointer;
+  margin: 2vh 0;
+}
+.checkboxholder {
+    width: 20vw;
+}
+.checkboxholder input {
+  width: auto;
+  margin: 0;
+  margin-right: .5vw;
+}
+.submitbtn:hover {
+  color: white;
+  background-color: #F14621;
 }

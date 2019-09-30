@@ -1,0 +1,66 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block main %}
+<div class="full-width center-row-flex">
+  <div class="content-section">
+    <div class="hunnded-width">
+      <div class="formtitle infotitle">Sign up</div>
+    </div>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+      {% endfor %}
+      <div class="hunned-width center-row-flex">
+        <div class="column-start-flex">
+          <div class="formsubtitle start-row-flex">
+            Company name
+          </div>
+          <div class="start-row-flex">
+            {{ form.username.errors }}
+            {{ form.username }}
+          </div>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="column-start-flex">
+          <div class="formsubtitle start-row-flex">
+            Email
+          </div>
+          <div class="start-row-flex">
+            {{ form.email.errors }}
+            {{ form.email }}
+          </div>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="column-start-flex">
+          <div class="formsubtitle start-row-flex">
+            Password
+          </div>
+          <div class="start-row-flex">
+            {{ form.password1.errors }}
+            {{ form.password1 }}
+          </div>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="column-start-flex">
+          <div class="formsubtitle start-row-flex">
+            Password
+          </div>
+          <div class="start-row-flex">
+            {{ form.password2 }}
+          </div>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <button type="submit" class="submitbtn">Sign up</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

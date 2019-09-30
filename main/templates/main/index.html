@@ -44,6 +44,10 @@
       </div>
     </div>
   </div>
+  <div class="full-width center-row-flex" style="margin-bottom: 5vh;">
+      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}?type=businesses">Get started!</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'businesses' %}">More info?</a></div>
+  </div>
 </div>
 <div class="full-width column-start-flex" style="display: none" id="individual-solutions">
   <div class="full-width justify start-row-flex">
@@ -58,6 +62,10 @@
         </h3>
       </div>
     </div>
+  </div>
+  <div class="full-width center-row-flex" style="margin-bottom: 5vh;">
+      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}?type=individuals">Get started!</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'individuals' %}">More info?</a></div>
   </div>
 </div>
 {% endblock %}
