@@ -5,7 +5,7 @@
 <div class="full-width center-row-flex">
   <div class="content-section">
     <div class="hunnded-width">
-      <div class="formtitle infotitle">Sign up</div>
+      <div class="formtitle infotitle">Sign in</div>
     </div>
     <form method="POST">
       {% csrf_token %}
@@ -14,17 +14,6 @@
         {{ hidden_field.errors }}
         {{ hidden_field }}
       {% endfor %}
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Company name
-          </div>
-          <div class="start-row-flex">
-            {{ form.username.errors }}
-            {{ form.username }}
-          </div>
-        </div>
-      </div>
       <div class="hunned-width center-row-flex">
         <div class="formsection column-start-flex">
           <div class="formsubtitle start-row-flex">
@@ -48,23 +37,10 @@
         </div>
       </div>
       <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Password
-          </div>
-          <div class="start-row-flex">
-            {{ form.password2 }}
-          </div>
-          <span class="errors">
-          {{ form.password2.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
         <button type="submit" class="submitbtn">Sign up</button>
       </div>
       <div class="hunned-width center-row-flex" style="margin-bottom: 2vh;">
-        <span class="small-txt">Already have an account? <a href="{% url 'signin' %}">Sign in</a></span>
+        <span class="small-txt">Don't have an account? <a href="{% url 'signup' %}">Sign up</a></span>
       </div>
     </form>
   </div>

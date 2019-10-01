@@ -398,3 +398,16 @@ input:focus {
   color: white;
   background-color: #F14621;
 }
+.errors {
+  color: #c30f0f;
+  font-size: 1vw;
+}
+.formsection {
+  width: 20vw;
+}
+a {
+  color: inherit;
+}
+.small-txt {
+  color: black;
+}
