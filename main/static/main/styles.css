@@ -402,6 +402,7 @@ textarea {
   font-size: 1.3vw;
   border: 1px solid black;
   border-radius: 5px;
+  font-family: 'Red Hat Text', sans-serif;
 }
 textarea:focus {
   outline: none;
@@ -457,6 +458,10 @@ a {
   margin: 0;
 }
 .form-section {
-  height: 50vh;
   margin: 2vh 4vw;
+}
+#id_width, #id_height {
+  font-size: 1vw;
+  width: 5vw;
+  height: 2vh;
 }

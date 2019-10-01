@@ -8,7 +8,8 @@
     font-size: 1.3vw;
   }
 </style>
-<div class="pg-title center-row-flex">
+
+<div class="pg-title">
   List your adspace
 </div>
 <div class="full-width center-row-flex">
@@ -69,6 +70,83 @@
               </span>
             </div>
           </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Height of adspace (ft)
+              </div>
+              <div class="start-row-flex">
+                {{ form.height }}
+              </div>
+              <span class="errors">
+              {{ form.height.errors.as_text }}
+              </span>
+            </div>
+          </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Width of adspace (ft)
+              </div>
+              <div class="start-row-flex">
+                {{ form.width }}
+              </div>
+              <span class="errors">
+              {{ form.width.errors.as_text }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center-row-flex">
+        <div class="column-start-flex form-section">
+          <div class="section-title pg-title">
+            Pricing
+          </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Term Length
+              </div>
+              <div class="start-row-flex">
+                {{ form.term_length }}
+              </div>
+              <span class="errors">
+              {{ form.term_length.errors.as_text }}
+              </span>
+            </div>
+          </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Price per term
+              </div>
+              <div class="start-row-flex">
+                {{ form.direct_price }}
+              </div>
+              <span class="errors">
+              {{ form.direct_price.errors.as_text }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column-start-flex form-section">
+          <div class="section-title pg-title">
+            Image
+          </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Photo
+              </div>
+              <div class="start-row-flex">
+                {{ form.image }}
+              </div>
+              <span class="errors">
+              {{ form.image.errors.as_text }}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hunned-width center-row-flex">
@@ -77,4 +155,15 @@
     </div>
   </form>
 </div>
+{% endblock %}
+{% block bottomScripts %}
+<script>
+  function activatePlacesSearch() {
+    var input = document.getElementById("id_address")
+    var autocomplete = new google.maps.places.Autocomplete(input, {types: ['geocode']})
+    autocomplete.setFields(['address_component']);
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRredUc1zqTYJAGpWwNF0nBiqBI7Hus70&libraries=places&callback=activatePlacesSearch"
+        async defer></script>
 {% endblock %}

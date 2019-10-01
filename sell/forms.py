@@ -7,4 +7,4 @@ from django.contrib.auth.forms import UserCreationForm
 class PublishAdspaceForm(forms.ModelForm):
     class Meta:
         model = Adspace
-        fields = ['title', 'term_length', 'allows_auction', 'direct_price', 'address', 'image', 'description']
+        fields = ['title', 'term_length', 'direct_price', 'height', 'width', 'address', 'image', 'description']
