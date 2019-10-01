@@ -11,7 +11,9 @@
       {% csrf_token %}
       {{ form.non_field_errors }}
       {% for hidden_field in form.hidden_fields %}
-        {{ hidden_field.errors }}
+      <span class="errors">
+        {{ hidden_field.errors.as_text }}
+      </span>
         {{ hidden_field }}
       {% endfor %}
       <div class="hunned-width center-row-flex">

@@ -11,3 +11,6 @@ def businesses(request):
 def individuals(request):
     context = {}
     return render(request, '/main/individuals.html', context)
+def gate(request):
+    context = {}
+    return render(request, 'main/gate.html', context)

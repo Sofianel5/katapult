@@ -375,6 +375,7 @@ input:focus {
     outline: none;
 }
 .submitbtn {
+  width: 20vw;
   color: #F14621;
   margin: 0 1vw;
   font-family: 'Red Hat Text', sans-serif;
@@ -394,6 +395,17 @@ input:focus {
   margin: 0;
   margin-right: .5vw;
 }
+textarea {
+  resize: none;
+  width: 20.3vw;
+  height: 15vh;
+  font-size: 1.3vw;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+textarea:focus {
+  outline: none;
+}
 .submitbtn:hover {
   color: white;
   background-color: #F14621;
@@ -410,4 +422,25 @@ a {
 }
 .small-txt {
   color: black;
+}
+.gateholder {
+  margin-top: 4vh;
+}
+.gate {
+  color: #F14621;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border: 2px solid #F14621;
+  border-radius: 10px;
+  padding: 1vh 1vw;
+  cursor: pointer;
+  margin: 2vh 1vw;
+}
+.gate:hover {
+  color: white;
+  background-color: #F14621;
+}
+.fileinput-holder input {
+  border: none;
 }
