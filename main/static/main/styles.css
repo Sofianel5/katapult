@@ -444,3 +444,19 @@ a {
 .fileinput-holder input {
   border: none;
 }
+.pg-title {
+  color: black;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 1.75vw;
+  font-weight: 600;
+  margin-top: 10vh;
+  text-align: center;
+}
+.section-title {
+  font-size: 1.5vw;
+  margin: 0;
+}
+.form-section {
+  height: 50vh;
+  margin: 2vh 4vw;
+}

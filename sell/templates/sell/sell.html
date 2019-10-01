@@ -2,7 +2,13 @@
 {% load static %}
 {% block title %}Sell your Adspace{% endblock %}
 {% block main %}
-<div class="page-title" style="text-align: center">
+<style>
+  input, textarea {
+    padding: 2vh 1vw;
+    font-size: 1.3vw;
+  }
+</style>
+<div class="pg-title center-row-flex">
   List your adspace
 </div>
 <div class="full-width center-row-flex">
@@ -14,112 +20,60 @@
         {{ hidden_field.errors }}
         {{ hidden_field }}
       {% endfor %}
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Title
+      <div class="center-row-flex">
+        <div class="column-start-flex form-section">
+          <div class="section-title pg-title">
+            Basic details
           </div>
-          <div class="start-row-flex">
-            {{ form.title }}
-          </div>
-          <span class="errors">
-          {{ form.title.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Description
-          </div>
-          <div class="start-row-flex">
-            {{ form.description }}
-          </div>
-          <span class="errors">
-          {{ form.description.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            State
-          </div>
-          <div class="start-row-flex">
-            {{ form.state }}
-          </div>
-          <span class="errors">
-          {{ form.state.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            City
-          </div>
-          <div class="start-row-flex">
-            {{ form.city }}
-          </div>
-          <span class="errors">
-          {{ form.city.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Zip Code
-          </div>
-          <div class="start-row-flex">
-            {{ form.zip_code }}
-          </div>
-          <span class="errors">
-          {{ form.zip_code.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Direct sale price ($)
-          </div>
-          <div class="start-row-flex">
-            {{ form.direct_price }}
-          </div>
-          <span class="errors">
-          {{ form.direct_price.errors.as_text }}
-          </span>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="checkboxholder">
-            <div class="start-row-flex">
-              {{ form.allows_auction }} Allow auction?
-            </div>
-            <span class="errors">
-            {{ form.allows_auction.errors.as_text }}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="hunned-width center-row-flex">
-        <div class="formsection column-start-flex">
-          <div class="formsubtitle start-row-flex">
-            Photos
-          </div>
-          <div class="start-row-flex">
-            <div class="fileinput-holder">
-            {{ form.image }}
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Title
+              </div>
+              <div class="start-row-flex">
+                {{ form.title }}
+              </div>
+              <span class="errors">
+              {{ form.title.errors.as_text }}
+              </span>
             </div>
           </div>
-          <span class="errors">
-          {{ form.direct_price.errors.as_text }}
-          </span>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Description
+              </div>
+              <div class="start-row-flex">
+                {{ form.description }}
+              </div>
+              <span class="errors">
+              {{ form.description.errors.as_text }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column-start-flex form-section">
+          <div class="section-title pg-title">
+            More details
+          </div>
+          <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+              <div class="formsubtitle start-row-flex">
+                Address
+              </div>
+              <div class="start-row-flex">
+                {{ form.address }}
+              </div>
+              <span class="errors">
+              {{ form.address.errors.as_text }}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="hunned-width center-row-flex">
       <button type="submit" class="submitbtn">Publish</button>
+      </div>
     </div>
   </form>
 </div>
