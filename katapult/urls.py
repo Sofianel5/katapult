@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('main.urls')),
     path("signup/", user_views.signup, name="signup"),
-    path("signin/", user_views.signin, name="signin"),
+    path("signin/", auth_views.LoginView.as_view(template_name='users/signin.html'), name="signin"),
+    path("signout/", auth_views.LogoutView.as_view(), name="users/signout.html"),
 ]

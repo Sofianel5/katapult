@@ -20,9 +20,11 @@
             Company name
           </div>
           <div class="start-row-flex">
-            {{ form.username.errors }}
-            {{ form.username }}
+            {{ form.name }}
           </div>
+          <span class="errors">
+          {{ form.name.errors.as_text }}
+          </span>
         </div>
       </div>
       <div class="hunned-width center-row-flex">
@@ -31,9 +33,11 @@
             Email
           </div>
           <div class="start-row-flex">
-            {{ form.email.errors }}
             {{ form.email }}
           </div>
+          <span class="errors">
+          {{ form.email.errors.as_text }}
+          </span>
         </div>
       </div>
       <div class="hunned-width center-row-flex">
@@ -42,9 +46,11 @@
             Password
           </div>
           <div class="start-row-flex">
-            {{ form.password1.errors }}
             {{ form.password1 }}
           </div>
+          <span class="errors">
+          {{ form.password1.errors.as_text }}
+          </span>
         </div>
       </div>
       <div class="hunned-width center-row-flex">

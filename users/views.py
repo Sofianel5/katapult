@@ -9,6 +9,7 @@ def signup(request):
         form = UserRegisterForm(request.POST)
         context["form"] = form
         if form.is_valid():
+            form.save()
             return redirect('main-landing') # redirect to success: sell or buy
     return render(request, "users/signup.html", context)
 
