@@ -1,0 +1,47 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block main %}
+<div class="page-title" style="text-align: center; margin: 0;">
+  Profile: {{ user.name }}
+</div>
+<div class="full-width start-row-flex">
+  <div class="column-start-flex">
+    <div class="splash-title">Your adspaces</div>
+    {% for space in adspaces %}
+    <div class="full-width start-row-flex" style="margin-top: 4vh; margin-left: 20vw;">
+        <div class="column-start-flex">
+                <img src="{{ v.image.url }}" class="showcase-img">
+        </div>
+        <div class="column-start-flex">
+            <div class="section-title">
+                {{ space.title }}
+            </div>
+            <div class="section-title">
+                {{ space.description }}
+            </div>
+            <div class="section-title">
+                {{ v.address }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="full-width start-row-flex">
+    <div class="column-start-flex">
+      <div class="splash-title">Your ad campaigns</div>
+    </div>
+  </div>
+<div class="page-title" style="text-align: center; margin: 0;">
+    Would you like to:
+  </div>
+  <div class="gateholder full-width center-row-flex">
+    <div class="gate">
+      <a class="invisible-link" href="{% url 'buy' %}">Buy Adspace</a>
+    </div>
+    <div class="gate">
+      <a class="invisible-link" href="{% url 'sell' %}">Sell Adspace</a>
+    </div>
+  </div>
+{% endblock %}

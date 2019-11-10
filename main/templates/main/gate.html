@@ -3,14 +3,14 @@
 {% block title %}{% endblock %}
 {% block main %}
 <div class="page-title" style="text-align: center; margin: 0;">
-  You've successfully created an account! <br>Would you like to:
+  Would you like to:
 </div>
 <div class="gateholder full-width center-row-flex">
   <div class="gate">
-    <a class="invisible-link" href="#">Buy Adspace</a>
+    <a class="invisible-link" href="{% url 'buy' %}">Buy Adspace</a>
   </div>
   <div class="gate">
-    <a class="invisible-link" href="#">Sell Adspace</a>
+    <a class="invisible-link" href="{% url 'sell' %}">Sell Adspace</a>
   </div>
 </div>
 {% endblock %}

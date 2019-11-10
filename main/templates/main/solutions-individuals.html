@@ -1,0 +1,69 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block main %}
+
+
+<div class="pg-title">
+  <h1>SOLUTIONS FOR OWNERS</h1>
+  <h5>How Katapult uses <i>in-depth data analysis</i> to connect your ad-space to the best possible advertisement for you.</h5>
+</div>
+
+
+<<div class="full-width column-start-flex">
+  <div class="full-width justify start-row-flex " id="easy-to-use">
+
+
+    <div class="reason column-center-flex">
+      <div class="hunned-width center-row-flex vertical-center" id = 'reason'>
+        <h4>
+          Katapult's easy-to-use user interface makes leasing an ad-space simple, creating a comprehensive pricing agreement between you and an advertiser.
+        </h4>
+      </div>
+    </div>
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/sell.png' %}" alt="Example of Katapult's user interface.">
+    </div>
+
+  </div>
+
+
+  <div class="full-width justify start-row-flex " id="product-control">
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/brain.jpeg' %}" alt="Machine learning neural network map.">
+    </div>
+
+
+    <div class="reason column-center-flex">
+      <div class="hunned-width center-row-flex vertical-center" id = 'reason'>
+        <h4>
+          Katapult uses machine learning technology to best match you width advertisements that best suit your pricing goals.
+        </h4>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="full-width justify start-row-flex " id="maximize-profits">
+    <div class="reason column-center-flex" vertical-center>
+      <div class="hunned-width center-row-flex " id = 'reason'>
+        <h4>
+          Katapult provides cost-effective solutions that allow your profits from advertisements to be maximized.
+        </h4>
+      </div>
+    </div>
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/asianguy.png' %}" alt="The amount of money you'd save by advertising with Katapult">
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

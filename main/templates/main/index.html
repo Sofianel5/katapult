@@ -4,32 +4,32 @@
 {% block main %}
 <div class="body" id="particles-js">
   <h1 class="splash-title">
-    Katapult is the <span class="emphisize">first</span> online platform to connect real-world property owners with advertisers, matching an advertiser’s specific business needs with a customized network of available advertising spaces.  <br>real life advertisement.
+    Katapult is the <i>first</i> online platform to connect real-world property owners with advertisers, matching an advertiser’s specific business needs with a customized network of available advertising spaces. 
   </h1>
   <div class="full-width end-row-flex">
     <div class="system-holder column-start-flex">
       <div class="system-row center-row-flex">
-        <div class="figure column-center-flex" style="animation: float1 6s ease-in-out infinite;">
+        <div class="touchable figure column-center-flex" style="animation: float1 6s ease-in-out infinite;">
           Katapult
         </div>
       </div>
       <div class="system-row justify center-row-flex">
-        <div id="businesses" onclick="showBusinessSolutions()" class="touchable figure column-center-flex" style="animation: float2 6s ease-in-out infinite;">
+        <div id="owners" onclick="showBusinessSolutions()" class="touchable figure column-center-flex" style="animation: float2 6s ease-in-out infinite;">
           Businesses
         </div>
-        <div id="consumers" onclick="showIndividualSolutions()" class="touchable figure column-center-flex" style="animation: float3 6s ease-in-out infinite;">
-          Individuals
+        <div id="businesses" onclick="showIndividualSolutions()" class="touchable figure column-center-flex" style="animation: float3 6s ease-in-out infinite;">
+          Owners
         </div>
       </div>
       <div class="system-row center-row-flex">
-        <div class="figure column-center-flex" style="animation: float3 6s ease-in-out infinite;">
+        <div class="touchable figure column-center-flex" style="animation: float3 6s ease-in-out infinite;">
           Consumers
         </div>
       </div>
     </div>
   </div>
 </div>
-<h1 class="page-title">Solutions for: <span style="background-color: #F14621; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Businesses</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Individuals</span></h1>
+<h1 class="page-title">Services for: <span style="background-color: #F14621; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Businesses</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Owners</span></h1>
 <div class="full-width column-start-flex" id="business-solutions">
   <div class="full-width justify start-row-flex">
     <div class="graphic-holder">
@@ -45,8 +45,8 @@
     </div>
   </div>
   <div class="full-width center-row-flex" style="margin-bottom: 5vh;">
-      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}?type=businesses">Get started!</a></div>
-      <div class="start-btn"><a class="invisible-link" href="{% url 'businesses' %}">More info?</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}">Get started!</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'whykatapult' %}">More info?</a></div>
   </div>
 </div>
 <div class="full-width column-start-flex" style="display: none" id="individual-solutions">
@@ -64,8 +64,8 @@
     </div>
   </div>
   <div class="full-width center-row-flex" style="margin-bottom: 5vh;">
-      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}?type=individuals">Get started!</a></div>
-      <div class="start-btn"><a class="invisible-link" href="{% url 'individuals' %}">More info?</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'signup' %}">Get started!</a></div>
+      <div class="start-btn"><a class="invisible-link" href="{% url 'whykatapult' %}">More info?</a></div>
   </div>
 </div>
 {% endblock %}

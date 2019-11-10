@@ -21,7 +21,8 @@
         {{ hidden_field.errors }}
         {{ hidden_field }}
       {% endfor %}
-      <div class="center-row-flex">
+      <div class="center-row-flex" style="height: 80vh;">
+        <div class="column-start-flex" style="height: 100%">
         <div class="column-start-flex form-section">
           <div class="section-title pg-title">
             Basic details
@@ -53,6 +54,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="column-start-flex" style="height: 100%">
         <div class="column-start-flex form-section">
           <div class="section-title pg-title">
             More details
@@ -70,6 +73,45 @@
               </span>
             </div>
           </div>
+          <div class="hunned-width center-row-flex">
+              <div class="formsection column-start-flex">
+                <div class="formsubtitle start-row-flex">
+                  City
+                </div>
+                <div class="start-row-flex">
+                  {{ form.city }}
+                </div>
+                <span class="errors">
+                {{ form.city.errors.as_text }}
+                </span>
+              </div>
+            </div>
+          <div class="hunned-width center-row-flex">
+              <div class="formsection column-start-flex">
+                <div class="formsubtitle start-row-flex">
+                  State
+                </div>
+                <div class="start-row-flex">
+                  {{ form.state }}
+                </div>
+                <span class="errors">
+                {{ form.state.errors.as_text }}
+                </span>
+              </div>
+            </div>
+          <div class="hunned-width center-row-flex">
+              <div class="formsection column-start-flex">
+                <div class="formsubtitle start-row-flex">
+                  Zip code
+                </div>
+                <div class="start-row-flex">
+                  {{ form.zip }}
+                </div>
+                <span class="errors">
+                {{ form.zip.errors.as_text }}
+                </span>
+              </div>
+            </div>
           <div class="hunned-width center-row-flex">
             <div class="formsection column-start-flex">
               <div class="formsubtitle start-row-flex">
@@ -98,6 +140,7 @@
           </div>
         </div>
       </div>
+    </div>
       <div class="center-row-flex">
         <div class="column-start-flex form-section">
           <div class="section-title pg-title">

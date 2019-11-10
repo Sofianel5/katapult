@@ -1,0 +1,66 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block main %}
+
+<div class="pg-title">
+  <h1>SOLUTIONS FOR BUSINESSES</h1>
+  <h5>How Katapult uses <i>in-depth data analysis</i> to help produce a cost-effective advertising solution for your business, product, or event.</h5>
+</div>
+
+<div class="full-width column-start-flex">
+  <div class="full-width justify start-row-flex " id="easy-to-use">
+
+
+    <div class="reason column-center-flex">
+      <div class="hunned-width center-row-flex vertical-center" id = 'reason'>
+        <h4>
+          Our friendly user interface makes finding the right advertising location as easy as entering your specific preferences and pressing "submit".
+        </h4>
+      </div>
+    </div>
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/buy.png' %}" alt="Example of Katapult's user interface.">
+    </div>
+
+  </div>
+
+
+  <div class="full-width justify start-row-flex " id="machine-learning">
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/brain.jpeg' %}" alt="Machine learning neural network map.">
+    </div>
+
+
+    <div class="reason column-center-flex">
+      <div class="hunned-width center-row-flex vertical-center" id = 'reason'>
+        <h4>
+          Katapult uses machine learning technology to analyze your needs and determine which advertising location is best suited for your product to achieve maxmimum visibility and interaction.
+        </h4>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="full-width justify start-row-flex " id="cost-effectiveness">
+    <div class="reason column-center-flex" vertical-center>
+      <div class="hunned-width center-row-flex " id = 'reason'>
+        <h4>
+          Katapult focuses on creating new ad space, while maintaining cost-effective leasing agreements, streamlining the advertising process.
+        </h4>
+      </div>
+    </div>
+
+    <div class="solutions-graphic">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="solutions-graphic" src="{% static 'main/asianguy.png' %}" alt="The amount of money you'd save by advertising with Katapult">
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

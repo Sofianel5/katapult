@@ -30,6 +30,23 @@
               </a>
             </div>
             <div class="end-row-flex">
+              {% if user.is_authenticated %}
+              <a href="{% url 'sell' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                  <div class="nav-link">
+                    List adspace
+                  </div>
+              </a>
+              <a href="{% url 'buy' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                  <div class="nav-link">
+                    Buy adspace
+                  </div>
+              </a>
+              <a href="{% url 'users/signout' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                <div class="nav-link">
+                  Logout
+                </div>
+              </a>
+              {% else %}
               <a href="/why-katapult" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                 <div class="nav-link">
                   Why Katapult?
@@ -50,7 +67,7 @@
                   <div class="dropdown-content start-row-flex">
                     <a href="/solutions-individuals" style="color: black; text-decoration: none;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/individual.svg' %}" class="icon"></span>
-                      Individuals
+                      Owners
                     </a>
                 </div>
                 </div>
@@ -62,7 +79,7 @@
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-businesses" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/info-leadership" style="color: black; text-decoration: none;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/leadership.svg' %}" class="icon"></span>
                       Leadership
                     </a>
@@ -81,11 +98,18 @@
                   </div>
                 </div>
               </div>
+              {% endif %}
               <div class="column-center-flex">
                 <div class="nav-button">
-                  <a class="invisible-link" href="{% url 'signup' %}">
-                  Get started
+                  {% if user.is_authenticated %}
+                  <a class="invisible-link" href="{% url 'profile' %}">
+                  Profile
                   </a>
+                  {% else %}
+                  <a class="invisible-link" href="{% url 'signup' %}">
+                  Get Started
+                  </a>
+                  {% endif %}
                 </div>
               </div>
             </div>

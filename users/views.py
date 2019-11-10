@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+
 from .forms import UserRegisterForm
 # Create your views here.
 def signup(request):
@@ -10,7 +13,7 @@ def signup(request):
         context["form"] = form
         if form.is_valid():
             form.save()
-            return redirect('main-landing') # redirect to success: sell or buy
+            return HttpResponseRedirect(reverse('signin')) # redirect to success: sell or buy
     return render(request, "users/signup.html", context)
 
 def signin(request):
