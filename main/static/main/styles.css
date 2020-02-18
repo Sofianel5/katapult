@@ -59,6 +59,18 @@ width: auto;
   -ms-box-align: start;
   align-items: flex-start;
 }
+.space-row-flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: space-between;
+}
 .end-row-flex {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -308,11 +320,12 @@ color: white;
 color: #084a75;
 font-family: 'Red Hat Text', sans-serif;
 font-weight: 600;
-margin-top: 5vh;
-margin-left: 3vw;
+margin-top: 35vh;
+margin-left: 5vw;
 }
 .options-btn {
 color: #084a75;
+background-color: white;
 margin: 0 1vw;
 font-family: 'Red Hat Text', sans-serif;
 font-weight: 600;

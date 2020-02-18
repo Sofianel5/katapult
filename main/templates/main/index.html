@@ -6,7 +6,8 @@
   <h1 class="splash-title">
     Katapult is the <i>first</i> online platform to connect real-world property owners with advertisers, matching an advertiser’s specific business needs with a customized network of available advertising spaces. 
   </h1>
-  <div class="full-width end-row-flex">
+  <div class="full-width space-row-flex">
+    <h1 class="page-title">Services for: <span style="background-color: #cc1100; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Businesses</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Owners</span></h1>
     <div class="system-holder column-start-flex">
       <div class="system-row center-row-flex">
         <div class="touchable figure column-center-flex" style="animation: float1 6s ease-in-out infinite;">
@@ -29,7 +30,6 @@
     </div>
   </div>
 </div>
-<h1 class="page-title">Services for: <span style="background-color: #cc1100; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Businesses</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Owners</span></h1>
 <div class="full-width column-start-flex" id="business-solutions">
   <div class="full-width justify start-row-flex">
     <div class="graphic-holder">
@@ -140,23 +140,23 @@ particlesJS("particles-js", {
 },
 "line_linked": {
 "enable": true,
-"distance": 150,
+"distance": 256, // diff (256.54) / 150
 "color": "#cc1100",
 "opacity": 0.4,
 "width": 1
 },
 "move": {
 "enable": true,
-"speed": 1.603412060865523,
+"speed": 6, // diff (6) / 1.603412060865523
 "direction": "none",
 "random": false,
 "straight": false,
-"out_mode": "bounce",
+"out_mode": "bounce", // diff ("out") / "bounce"
 "bounce": false,
 "attract": {
 "enable": false,
-"rotateX": 1443.0708547789707,
-"rotateY": 1200
+"rotateX": 600, // diff (600) / 1443.0708547789707
+"rotateY": 1200 
 }
 }
 },
@@ -169,7 +169,7 @@ particlesJS("particles-js", {
 },
 "onclick": {
 "enable": true,
-"mode": "repulse"
+"mode": "push" // diff ("push") / repulse
 },
 "resize": true
 },
