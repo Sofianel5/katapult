@@ -1,0 +1,2 @@
+hover effects for nav links 
+change graphics on home page to screenshots 
