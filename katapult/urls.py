@@ -24,8 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('main.urls')),
     path("signup/", user_views.signup, name="signup"),
+    path("enable-buying", user_views.enable_buying, name="enable-buying"),
+    path("enable-selling", user_views.enable_selling, name="enable-selling"),
     path("signin/", auth_views.LoginView.as_view(template_name='users/signin.html'), name="signin"),
     path("signout/", auth_views.LogoutView.as_view(template_name='users/signout.html'), name="users/signout"),
     path("buy/", include("buy.urls")),
     path("sell/", include("sell.urls")),
+    path("more-info/", user_views.more_info, name="more-info")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

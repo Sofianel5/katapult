@@ -2,7 +2,11 @@ from django.shortcuts import render
 from .forms import CampaignCreationForm
 from .analysis import sortMatchingSegments, getCoordinates
 from users.models import Buyer
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
+
+@login_required
 def buy(request):
     if request.method == "GET":
         form = CampaignCreationForm(request.POST)

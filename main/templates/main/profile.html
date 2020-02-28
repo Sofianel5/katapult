@@ -1,47 +1,80 @@
-{% extends "main/layout.html" %}
-{% load static %}
-{% block title %}{% endblock %}
-{% block main %}
-<div class="page-title" style="text-align: center; margin: 0;">
-  Profile: {{ user.name }}
+{% extends "main/layout.html" %} {% load static %} {% block title %}{% endblock %} {% block main %}
+<div class="page-title" style="text-align: center; margin: 6vh 0 0 0;">
+    Welcome, {{ user.name }}!
 </div>
-<div class="full-width start-row-flex">
-  <div class="column-start-flex">
-    <div class="splash-title">Your adspaces</div>
-    {% for space in adspaces %}
-    <div class="full-width start-row-flex" style="margin-top: 4vh; margin-left: 20vw;">
-        <div class="column-start-flex">
-                <img src="{{ v.image.url }}" class="showcase-img">
-        </div>
-        <div class="column-start-flex">
-            <div class="section-title">
-                {{ space.title }}
-            </div>
-            <div class="section-title">
-                {{ space.description }}
-            </div>
-            <div class="section-title">
-                {{ v.address }}
-            </div>
-        </div>
+<div class="gateholder full-width center-row-flex" style="margin: 1vh 0 0 0">
+    <div class="gate">
+        <a class="invisible-link" href="{% url 'buy' %}">Buy Adspace</a>
     </div>
-    {% endfor %}
-  </div>
+    <div class="gate">
+        <a class="invisible-link" href="{% url 'sell' %}">Sell Adspace</a>
+    </div>
 </div>
+{% if user.is_seller %}
 <div class="full-width start-row-flex">
     <div class="column-start-flex">
-      <div class="splash-title">Your ad campaigns</div>
+        <div class="splash-title" style="margin-top: 2vh">Your adspaces</div>
+        {% if adspaces|length == 0 %}
+        <div class="info-message">
+            You haven't listed any adspace yet.
+        </div>
+        {% endif %} {% for space in adspaces %}
+        <div class="full-width start-row-flex" style="margin-top: 4vh; margin-left: 20vw;">
+            <div class="column-start-flex">
+                <img src="{{ space.image.url }}" class="showcase-img">
+            </div>
+            <div class="column-start-flex">
+                <div class="section-title">
+                    {{ space.title }}
+                </div>
+                <div class="section-title">
+                    {{ space.description }}
+                </div>
+                <div class="section-title">
+                    {{ space.address }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-  </div>
-<div class="page-title" style="text-align: center; margin: 0;">
-    Would you like to:
-  </div>
-  <div class="gateholder full-width center-row-flex">
-    <div class="gate">
-      <a class="invisible-link" href="{% url 'buy' %}">Buy Adspace</a>
+</div>
+{% else %}
+<div class="full-width start-row-flex" style="padding: 2vh 0 0 2vw">
+    <div class="info-ajax-link" id="enable-selling" onclick="enable_selling()">Enable adspace selling</div>
+</div>
+{% endif %} {% if user.is_buyer %}
+<div class="full-width start-row-flex">
+    <div class="column-start-flex">
+        <div class="splash-title">Your ad campaigns</div>
+        <div class="info-message">
+            You haven't started any campaigns yet.
+        </div>
     </div>
-    <div class="gate">
-      <a class="invisible-link" href="{% url 'sell' %}">Sell Adspace</a>
-    </div>
-  </div>
+</div>
+{% else %}
+<div class="full-width start-row-flex" style="padding: 2vh 0 0 2vw">
+    <div class="info-ajax-link" id="enable-buying" onclick="enable_buying()">Enable adspace renting</div>
+</div>
+{% endif %} {% endblock %} {% block bottomScripts %}
+<script>
+    function enable_selling() {
+        var request = new XMLHttpRequest()
+        request.open("POST", "{% url 'enable-selling' %}")
+        request.onload = function() {
+            window.location.reload()
+        }
+        request.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+        request.send()
+    }
+
+    function enable_buying() {
+        var request = new XMLHttpRequest()
+        request.open("POST", "{% url 'enable-buying' %}")
+        request.onload = function() {
+            window.location.reload()
+        }
+        request.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+        request.send()
+    }
+</script>
 {% endblock %}

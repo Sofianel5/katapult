@@ -31,14 +31,23 @@
             </div>
             <div class="end-row-flex">
               {% if user.is_authenticated %}
+              {% if user.is_seller %}
               <a href="{% url 'sell' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                   <div class="nav-link">
                     List adspace
                   </div>
               </a>
+              {% endif %}
+              {% if user.is_buyer %}
               <a href="{% url 'buy' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                   <div class="nav-link">
-                    Buy adspace
+                    Start a campaign
+                  </div>
+              </a>
+              {% endif %}
+              <a href="{% url 'more-info' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                  <div class="nav-link">
+                    Edit profile
                   </div>
               </a>
               <a href="{% url 'users/signout' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
@@ -59,13 +68,13 @@
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-businesses" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/solutions-businesses" style="color: black;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/businesses.svg' %}" class="icon"></span>
                       Businesses
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/solutions-individuals" style="color: black;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/individual.svg' %}" class="icon"></span>
                       Owners
                     </a>
@@ -79,19 +88,19 @@
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
                   <div class="dropdown-content start-row-flex">
-                    <a href="/info-leadership" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/info-leadership" style="color: black;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/leadership.svg' %}" class="icon"></span>
                       Leadership
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/solutions-individuals" style="color: black;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/news.svg' %}" class="icon"></span>
                       News
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" style="color: black; text-decoration: none;" class="start-row-flex">
+                    <a href="/solutions-individuals" style="color: black;" class="start-row-flex">
                       <span class="icon-holder"><img src="{% static 'main/contact.svg' %}" class="icon"></span>
                       Contact
                     </a>

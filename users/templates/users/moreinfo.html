@@ -1,0 +1,242 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block main %}
+<div class="full-width center-row-flex" id="particles-js">
+  <div class="content-section" style="width: 75vw">
+    <div class="hunnded-width">
+      <div class="formtitle infotitle">Profile info</div>
+    </div>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+      {% endfor %}
+      <div class="center-row-flex">
+      <div class="column-center-flex" style="width: 37.5vw">
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Company Description
+            </div>
+            <div class="start-row-flex">
+                {{ form.description }}
+            </div>
+            <span class="errors">
+            {{ form.description.errors.as_text }}
+            </span>
+            </div>
+        </div>
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+                <div class="formsubtitle start-row-flex">
+                    Tags
+                </div>
+                <div class="start-row-flex">
+                    {{ form.tags }}
+                </div>
+                <span class="errors">
+                    {{ form.tags.errors.as_text }}
+                </span>
+            </div>
+        </div>
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Website
+            </div>
+            <div class="start-row-flex">
+                {{ form.website }}
+            </div>
+            <span class="errors">
+            {{ form.website.errors.as_text }}
+            </span>
+            </div>
+        </div>
+      </div>
+      
+      <div class="column-center-flex" style="width: 37.5vw">
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Address
+            </div>
+            <div class="start-row-flex">
+                {{ form.address }}
+            </div>
+            <span class="errors">
+            {{ form.address.errors.as_text }}
+            </span>
+            </div>
+        </div>
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Public email
+            </div>
+            <div class="start-row-flex">
+                {{ form.public_email }}
+            </div>
+            <span class="errors">
+            {{ form.public_email.errors.as_text }}
+            </span>
+            </div>
+        </div>
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Logo
+            </div>
+            <div class="start-row-flex">
+                {{ form.logo }}
+            </div>
+            <span class="errors">
+            {{ form.logo.errors.as_text }}
+            </span>
+            </div>
+        </div>
+        <div class="hunned-width center-row-flex">
+            <div class="formsection column-start-flex">
+            <div class="formsubtitle start-row-flex">
+                Will you be buying or selling adspace?
+            </div>
+            <div class="start-row-flex">
+            Selling: {{ form.is_seller }}
+            </div>
+            <div class="start-row-flex">
+                Buying: {{ form.is_buyer }}
+            </div>
+            <span class="errors">
+            {{ form.is_seller.errors.as_text }}
+            </span>
+            <span class="errors">
+            {{ form.is_buyer.errors.as_text }}
+            </span>
+            </div>
+        </div>
+       </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <button type="submit" class="submitbtn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+{% block bottomScripts %}
+<script type="text/javascript">
+particlesJS("particles-js", {
+"particles": {
+"number": {
+"value": 80,
+"density": {
+"enable": true,
+"value_area": 800
+}
+},
+"color": {
+"value": "#cc1100"
+},
+"shape": {
+"type": "circle",
+"stroke": {
+"width": 0,
+"color": "#000000"
+},
+"polygon": {
+"nb_sides": 5
+},
+"image": {
+"src": "img/github.svg",
+"width": 100,
+"height": 100
+}
+},
+"opacity": {
+"value": 0.5,
+"random": false,
+"anim": {
+"enable": false,
+"speed": 1,
+"opacity_min": 0.1,
+"sync": false
+}
+},
+"size": {
+"value": 3,
+"random": true,
+"anim": {
+"enable": false,
+"speed": 40,
+"size_min": 0.1,
+"sync": false
+}
+},
+"line_linked": {
+"enable": true,
+"distance": 150,
+"color": "#cc1100",
+"opacity": 0.4,
+"width": 1
+},
+"move": {
+"enable": true,
+"speed": 1.603412060865523,
+"direction": "none",
+"random": false,
+"straight": false,
+"out_mode": "bounce",
+"bounce": false,
+"attract": {
+"enable": false,
+"rotateX": 1443.0708547789707,
+"rotateY": 1200
+}
+}
+},
+"interactivity": {
+"detect_on": "window",
+"events": {
+"onhover": {
+"enable": false,
+"mode": "grab"
+},
+"onclick": {
+"enable": true,
+"mode": "repulse"
+},
+"resize": true
+},
+"modes": {
+"grab": {
+"distance": 400,
+"line_linked": {
+  "opacity": 1
+}
+},
+"bubble": {
+"distance": 400,
+"size": 40,
+"duration": 2,
+"opacity": 8,
+"speed": 3
+},
+"repulse": {
+"distance": 200,
+"duration": 0.4
+},
+"push": {
+"particles_nb": 4
+},
+"remove": {
+"particles_nb": 2
+}
+}
+},
+"retina_detect": true
+}
+)
+</script>
+{% endblock %}

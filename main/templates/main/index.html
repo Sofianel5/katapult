@@ -7,7 +7,7 @@
     Katapult is the <i>first</i> online platform to connect real-world property owners with advertisers, matching an advertiser’s specific business needs with a customized network of available advertising spaces.
   </h1>
   <div class="full-width space-row-flex">
-    <h1 class="page-title">Services for: <span style="background-color: #cc1100; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Businesses</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Owners</span></h1>
+    <h1 class="page-title">Services for: <span style="background-color: #cc1100; color: white;" onclick="showBusinessSolutions()" id="businessOptButton" class="options-btn">Advertisers</span> <span id="individualOptButton" onclick="showIndividualSolutions()" class="options-btn">Ad-space Owners</span></h1>
     <div class="system-holder column-start-flex">
       <div class="system-row center-row-flex">
         <div class="touchable figure column-center-flex" style="animation: float1 6s ease-in-out infinite;">
@@ -16,7 +16,7 @@
       </div>
       <div class="system-row justify center-row-flex">
         <div id="owners" onclick="showBusinessSolutions()" class="touchable figure column-center-flex" style="animation: float2 6s ease-in-out infinite;">
-          Businesses
+          Advertisers
         </div>
         <div id="businesses" onclick="showIndividualSolutions()" class="touchable figure column-center-flex" style="animation: float3 6s ease-in-out infinite;">
           Owners
@@ -39,9 +39,30 @@
     <div class="infoholder column-center-flex">
       <div class="hunned-width center-row-flex">
         <h3 class="infotitle">
-          Win over new customers through effective and personalized advertising spaces.<br>Our algorithms will pair you with the most relevant, most likely-profitable spaces on the market.
+          Win over new customers with effective and personalized advertising spaces.
         </h3>
       </div>
+      <div class="info-p">
+        Our algorithms will pair you with the most relevant, most likely-profitable spaces on the market.
+      </div>
+    </div>
+  </div>
+  <div class="full-width justify start-row-flex">
+    <div class="infoholder column-center-flex">
+      <div class="hunned-width center-row-flex">
+        <h3 class="infotitle">
+          Mental Topology
+        </h3>
+        <!-- You should probably make it into a title and paragraph schema -->
+      </div>
+      <div class="info-p">
+        Our mental topology algorithms use big data to identify where and when customers are most suseptable to advertisement for your product. 
+        This allows you to spend you money more effectively, targeting people most likely to be customers. 
+      </div>
+    </div>
+    <div class="graphic-holder">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="graphic" src="{% static 'main/support-team.svg' %}" alt="Customized intelligent matching system.">
     </div>
   </div>
   <div class="full-width center-row-flex" style="margin-bottom: 5vh;">
@@ -58,9 +79,62 @@
     <div class="infoholder column-center-flex">
       <div class="hunned-width center-row-flex">
         <h3 class="infotitle">
-          Earn money off of your property
+          Get ahead of your expenses by earning extra income on your assets. 
         </h3>
       </div>
+      <div class="info-p">
+        Our all-in-one platform will allow you to earn virtually on autopilot. 
+        Choose your desired level of interaction, and we will handle the rest, optimizing engagements for your benefit. 
+      </div>
+    </div>
+  </div>
+  <div class="full-width justify start-row-flex">
+    <div class="infoholder column-center-flex">
+      <div class="hunned-width center-row-flex">
+        <h3 class="infotitle">
+          Don't choose between convenience and control
+        </h3>
+      </div>
+      <div class="info-p">
+       We give adspace owners complete control of their property while still "emphasizing" hands-off workflow. 
+          Choose what you want to monitor and what you want to be automated. 
+      </div>
+    </div>
+    <div class="graphic-holder">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="graphic" src="{% static 'main/support-team.svg' %}" alt="Customized intelligent matching system.">
+    </div>
+  </div>
+  <div class="full-width justify start-row-flex">
+    <div class="graphic-holder">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="graphic" src="{% static 'main/support-team.svg' %}" alt="Customized intelligent matching system.">
+    </div>
+    <div class="infoholder column-center-flex">
+      <div class="hunned-width center-row-flex">
+        <h3 class="infotitle">
+         Worth your time
+        </h3>
+      </div>
+      <div class="info-p">
+         Our pricing algorithms finds the best deal for both sides by matching you will the customers who will pay the most for your space. 
+      </div>
+    </div>
+  </div>
+  <div class="full-width justify start-row-flex">
+    <div class="infoholder column-center-flex">
+      <div class="hunned-width center-row-flex">
+        <h3 class="infotitle">
+          Brand security
+        </h3>
+      </div>
+      <div class="info-p">
+      We built in brand security. Choose what ads you allow, which you don't, and which you need to review.
+      </div>
+    </div>
+    <div class="graphic-holder">
+      <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
+      <img class="graphic" src="{% static 'main/support-team.svg' %}" alt="Customized intelligent matching system.">
     </div>
   </div>
   <div class="full-width center-row-flex" style="margin-bottom: 5vh;">

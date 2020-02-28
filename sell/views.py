@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from .forms import PublishAdspaceForm
 from users.models import Seller
 from utils import createDemographicProfile
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
+
+@login_required
 def sell(request):
     context = {}
     if request.method == "GET":

@@ -9,13 +9,22 @@ from .managers import MyAccountManager
 
 class Account(AbstractBaseUser):
     username = None
-    email = models.EmailField(verbose_name="Email", max_length=150, unique=True)
-    name = models.CharField(verbose_name="Company name", max_length=150)
-    date_joined = models.DateTimeField(verbose_name="date joined", auto_now_add=True)
-    last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
+    email = models.EmailField(verbose_name=_("Email"), max_length=150, unique=True)
+    name = models.CharField(verbose_name=_("Company name"), max_length=150)
+    date_joined = models.DateTimeField(verbose_name=_("date joined"), auto_now_add=True)
+    last_login = models.DateTimeField(verbose_name=_("last login"), auto_now=True)
+    phone = models.CharField(_("Phone number"), max_length=15)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    description = models.TextField(verbose_name=_("Company description"),blank=True, null=True)
+    public_email = models.EmailField(verbose_name=_("Email"), blank=True, null=True)
+    website = models.URLField(verbose_name=_("Website"),blank=True, null=True)
+    tags = models.TextField(verbose_name=_("Tags"),blank=True, null=True)
+    address = models.CharField(max_length=50,blank=True, null=True)
+    logo = models.ImageField(blank=True, null=True)
+    is_seller = models.BooleanField(default=True, blank=True, null=True)
+    is_buyer = models.BooleanField(default=True,blank=True, null=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
     objects = MyAccountManager()

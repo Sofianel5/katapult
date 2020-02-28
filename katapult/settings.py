@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'profile'
+LOGIN_URL = "/signin/"

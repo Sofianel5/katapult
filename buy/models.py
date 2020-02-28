@@ -20,7 +20,7 @@ class Campaign(models.Model):
     #locations_of_business = models.TextField(blank=True)
     budget = models.FloatField()
     def __str__(self):
-        return marketSegment.__str__()
+        return self.marketSegment.__str__()
 
 
 
