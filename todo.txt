@@ -1,3 +1,5 @@
 hover effects for nav links 
 change graphics on home page to screenshots 
 brand security tools for sellers - after more info redirect to even more info based on if they decided to choose buyer or seller
+make the buttons on the home page actually buttons
+Add default enum tags 

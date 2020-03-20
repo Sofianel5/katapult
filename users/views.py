@@ -28,8 +28,7 @@ def more_info(request):
         form = MoreInfoForm(request.POST, instance=request.user)
         context["form"] = form 
         if form.is_valid():
-            extension = form.save()
-            request.user.extension = extension
+            user = form.save()
             return HttpResponseRedirect(reverse('profile'))
     return render(request, "users/moreinfo.html", context)
 
