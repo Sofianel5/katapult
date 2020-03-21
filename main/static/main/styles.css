@@ -396,7 +396,7 @@ header {
 
 #feature-2 {
     background-image: url("background1.svg");
-    height: 100vh;
+    height: 200vh;
     background-size: cover;
     background-position: 30% 0%;
 }
