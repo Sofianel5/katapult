@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from users.models import Adspace, Seller
 from django.contrib.auth.decorators import login_required
+from users.forms import UserRegisterForm
 
 # Create your views here.
 def index(request):
     context = {}
     context['user'] = request.user
+    context['form'] = UserRegisterForm()
     return render(request, 'main/index.html', context)
 
 def businesses(request):

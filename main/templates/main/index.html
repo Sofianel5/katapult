@@ -4,7 +4,7 @@
 {% block main %}
 <div class="home-splash body">
   <div class="space-evenly-row-flex" >
-    <div class="home-title-col column-start-flex">
+    <div class="home-title-col column-start-flex" data-aos="fade-up">
       <h1 class="splash-title">
         Katapult is here to revolutionize <br>outdoor advertising.
       </h1>
@@ -18,10 +18,142 @@
     <div class="popup-holder column-center-flex">
       <div class="get-started-popup space-evenly-column-flex">
         <div class="center-row-flex">
+          <form action="/signup" method="POST" class="space-evenly-column-flex">
           <h4 class="popup-title">Sign up to Katapult</h4>
+             {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+      {% endfor %}
+      <div class="hunned-width center-row-flex">
+        <div class="formsection column-start-flex">
+          <div class="splash-formsubtitle start-row-flex">
+            Company name
+          </div>
+          <div class="start-row-flex">
+            {{ form.name }}
+          </div>
+          <span class="errors">
+          {{ form.name.errors.as_text }}
+          </span>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="formsection column-start-flex">
+          <div class="splash-formsubtitle start-row-flex">
+            Email
+          </div>
+          <div class="start-row-flex">
+            {{ form.email }}
+          </div>
+          <span class="errors">
+          {{ form.email.errors.as_text }}
+          </span>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="formsection column-start-flex">
+          <div class="splash-formsubtitle start-row-flex">
+            Phone number
+          </div>
+          <div class="start-row-flex">
+            {{ form.phone }}
+          </div>
+          <span class="errors">
+          {{ form.phone.errors.as_text }}
+          </span>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="formsection column-start-flex">
+          <div class="splash-formsubtitle start-row-flex">
+            Password
+          </div>
+          <div class="start-row-flex">
+            {{ form.password1 }}
+          </div>
+          <span class="errors">
+          {{ form.password1.errors.as_text }}
+          </span>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <div class="formsection column-start-flex">
+          <div class="splash-formsubtitle start-row-flex">
+            Password (again)
+          </div>
+          <div class="start-row-flex">
+            {{ form.password2 }}
+          </div>
+          <span class="errors">
+          {{ form.password2.errors.as_text }}
+          </span>
+        </div>
+      </div>
+      <div class="hunned-width center-row-flex">
+        <button type="submit" class="submitbtn">Sign up</button>
+      </div>
+      <div class="hunned-width center-row-flex" style="margin-bottom: 2vh;">
+        <span class="small-txt">Already have an account? <a href="{% url 'signin' %}">Sign in</a></span>
+      </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="blue-band"></div>
+<div id="feature-1" class="feature-box">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="{% static 'main/times-square.mp4' %}" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="end-row-flex" style="margin-right: 5vw" data-aos="fade-up">
+      <div class="home-title-col column-center-flex" >
+        <h1 class="splash-title">
+          A truely advanced platform for outdoor advertisement.
+        </h1>
+        <h2 class="splash-title">
+          Proprietary tools to catapult your business to the next level.
+        </h2>
+        <h3 class="splash-title">
+          Utilize our algorithms, platform, and processes to streamline your out of home advertising needs.
+        </h3>
+        <div class="hunned-width start-row-flex">
+          <div class="nav-button" style="margin: 0; margin-top: 5vh;">
+            <a class="invisible-link" href="{% url 'signup' %}">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="feature-2" class="feature-box">
+  <div class="space-evenly-row-flex">
+    <div class="column-center-flex">
+      <img class="solutions-graphic" src="{% static 'main/buy.png' %}">
+    </div>
+    <div class="home-title-col column-center-flex">
+        <h1 class="splash-title">
+          A truely advanced platform for outdoor advertisement.
+        </h1>
+        <h2 class="splash-title">
+          Proprietary tools to catapult your business to the next level.
+        </h2>
+        <h3 class="splash-title">
+          Utilize our algorithms, platform, and processes to streamline your out of home advertising needs.
+        </h3>
+        <div class="hunned-width start-row-flex">
+          <div class="nav-button" style="margin: 0; margin-top: 5vh;">
+            <a class="invisible-link" href="{% url 'signup' %}">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 <div class="full-width column-start-flex" id="business-solutions">
@@ -138,6 +270,10 @@
 </div>
 {% endblock %}
 {% block bottomScripts %}
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 <script type="text/javascript">
 function showBusinessSolutions() {
   document.getElementById("businessOptButton").style.backgroundColor = "#cc1100"

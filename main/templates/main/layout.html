@@ -13,6 +13,7 @@
         <!-- Load in css -->
         <link href="{% static 'main/styles.css' %}" rel="stylesheet"/>
         <script src="{% static 'main/particles.min.js' %}"></script>
+         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
         <!-- TODO: Optimize for search engines -->
 
@@ -51,12 +52,12 @@
                 </div>
               </a>
               {% else %}
-              <a href="/why-katapult" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+              <a href="{% url 'whykatapult' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                 <div class="nav-link">
                   Why Katapult?
                 </div>
               </a>
-              <a href="/why-katapult" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+              <a href="{% url 'whykatapult' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                 <div class="nav-link">
                   Resources
                 </div>
@@ -68,13 +69,13 @@
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-businesses" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                    <a href="{% url 'solutions-businesses' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
                       <span class="icon-holder"><img src="{% static 'main/businesses.svg' %}" class="icon"></span>
                       Businesses
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
                       <span class="icon-holder"><img src="{% static 'main/individual.svg' %}" class="icon"></span>
                       Owners
                     </a>
@@ -88,19 +89,19 @@
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
                   <div class="dropdown-content start-row-flex">
-                    <a href="/info-leadership" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                    <a href="{% url 'info-leadership' %}%" class="start-row-flex dropdown-txt" style="text-decoration:none">
                       <span class="icon-holder"><img src="{% static 'main/leadership.svg' %}" class="icon"></span>
                       Company
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
                       <span class="icon-holder"><img src="{% static 'main/news.svg' %}" class="icon"></span>
                       News
                     </a>
                   </div>
                   <div class="dropdown-content start-row-flex">
-                    <a href="/solutions-individuals" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
                       <span class="icon-holder"><img src="{% static 'main/contact.svg' %}" class="icon"></span>
                       Contact
                     </a>

@@ -341,7 +341,7 @@ header {
     width: 30vw;
     background-color: #ffffff;
     border-radius: 2vw;
-    height: 65vh;
+    height: 75vh;
 }
 
 .emphisize {
@@ -385,6 +385,46 @@ header {
     border-radius: 50%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     font-weight: 600;
+}
+
+.feature-box {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    padding: 10vh 0;
+}
+
+#feature-2 {
+    background-image: url("background1.svg");
+    height: 100vh;
+    background-size: cover;
+    background-position: 30% 0%;
+}
+
+.blue-band {
+    height: 10vh;
+    width: 100vw;
+    background-color: #084A75;
+}
+
+.feature-box video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-42%);
+    -moz-transform: translateX(-50%) translateY(-42%);
+    -webkit-transform: translateX(-50%) translateY(-42%);
+    transform: translateX(-50%) translateY(-42%);
+}
+
+.feature-box .container {
+    position: relative;
+    z-index: 2;
 }
 
 h1,
@@ -597,12 +637,18 @@ html {
     margin-top: 1vh;
 }
 
+.splash-formsubtitle {
+    font-family: 'Red Hat Text', sans-serif;
+    margin-top: 1vh;
+    color: #9DA7B6;
+}
+
 input {
     font-size: 1.3vw;
-    padding: 0.25vh 0.25vw;
+    padding: 0.5vh 0.25vw;
     margin-top: 1vh;
     height: 3.5vh;
-    border: 1px solid black;
+    border: 2px solid #9DA7B6;
     border-radius: 3px;
     width: 20vw;
 }
