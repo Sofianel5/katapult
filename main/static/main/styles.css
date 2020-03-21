@@ -76,6 +76,32 @@
     align-items: space-between;
 }
 
+.space-evenly-row-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-justify-content: space-evenly;
+    -webkit-box-pack: justify;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+
+.space-evenly-column-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-justify-content: space-evenly;
+    -webkit-box-pack: justify;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+
 .end-row-flex {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -143,11 +169,11 @@ body {
 header {
     position: fixed;
     width: 100vw;
-    background-color: white;
+    background-color: #084A75;
     z-index: 1000;
     height: 8vh;
     padding: 2vh 0vw;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid black;
 }
 
 .body-root {
@@ -169,9 +195,13 @@ header {
 .nav-link {
     margin: 1vh 2vw 0 2vw;
     font-weight: 500;
-    font-size: 1.3vw;
+    font-size: 1.15vw;
     font-family: 'Red Hat Text', sans-serif;
-    color: #084A75;
+    color: #9DA7B6;
+}
+
+.nav-link:hover {
+    color: #f55f5d;
 }
 
 .nav-link:hover {
@@ -204,12 +234,12 @@ header {
 .nav-button {
     font-family: 'Red Hat Text', sans-serif;
     padding: 1vh 1.5vw;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: 600;
     color: white;
-    background-color: #cc1100;
-    border-radius: 15%;
-    border: 2px solid #cc1100;
+    background-color: #db3731;
+    border-radius: 0.5vw;
+    border: 2px solid #db3731;
     margin: 0 2vw 1vh 2vw;
 }
 
@@ -219,7 +249,6 @@ header {
     -o-transform: translateY(-2px);
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
-    box-shadow: 5px 5px 10px grey;
 }
 
 .dropdown {
@@ -227,18 +256,36 @@ header {
     cursor: pointer;
 }
 
+.dropdown-txt {
+    color: #3dbeaf;
+    font-size: 1.15vw;
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    font-weight: 500;
+}
+
+.dropdown-txt:hover {
+    text-decoration: none;
+    color: #db3731;
+}
+
 .dropdownbox {
     position: absolute;
-    background-color: #f4f7f6;
+    background-color: white;
     border-radius: 10px;
     top: 80%;
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
+    padding: 1vw 2vw;
 }
 
 .dropdown:hover .dropdownbox {
     display: flex;
+    animation: grow 0.1s ease;
+}
+
+.dropdown:hover .nav-link {
+    color: #f55f5d;
 }
 
 .dropdown:hover .arrow-up {
@@ -261,6 +308,7 @@ header {
     font-family: 'Red Hat Text', sans-serif;
     margin-bottom: .5vh;
     margin-top: .5vh;
+    color: #00c2cc;
 }
 
 .icon {
@@ -272,11 +320,28 @@ header {
 }
 
 .splash-title {
-    color: #084A75;
+    text-align: start;
+    width: 40vw;
+    margin-top: 3vh;
+    color: white;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 600;
-    margin-top: 10vh;
-    margin-left: 5vw;
+}
+
+.popup-holder {
+    height: 90vh;
+}
+
+.popup-title {
+    text-align: center;
+    font-weight: 500;
+}
+
+.get-started-popup {
+    width: 30vw;
+    background-color: #ffffff;
+    border-radius: 2vw;
+    height: 65vh;
 }
 
 .emphisize {
@@ -293,6 +358,13 @@ header {
     z-index: -1;
     position: absolute;
     top: 0;
+}
+
+.home-splash {
+    margin-top: -7vh;
+    padding-top: 10vh;
+    background-image: url("billboard.png");
+    background-size: cover;
 }
 
 .system-holder {
@@ -315,6 +387,19 @@ header {
     font-weight: 600;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+.home-title-col {
+    padding-top: 8vh;
+    height: 90vh;
+    width: 40vw;
+}
+
 .touchable {
     cursor: pointer;
 }
@@ -322,6 +407,15 @@ header {
 .touchable:hover {
     background-color: #cc1100;
     color: white;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes float1 {
