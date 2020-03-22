@@ -2,162 +2,101 @@
 {% load static %}
 {% block title %}Why Katapult{% endblock %}
 {% block main %}
-<div class="pg-title">
-    <div class="full-width justify start-row-flex">
-        <div class="graphic-holder2">
-          <!-- TODO: these graphics dont go well with the theme of the page, change to screenshots and direct representation -->
-          <img class="ml-graphic" src="{% static 'main/Luther-nailing-theses-560x538.webp' %}">
-        </div>
-        <div class="infoholder2 column-center-flex">
-          <div class="hunned-width center-row-flex">
-            <h3 class="infotitle2">
-              Because a revolution is just a <i>wall away</i>.
-            </h3>
-          </div>
+<div id="feature-2" class="feature-box">
+  <div class="space-evenly-row-flex">
+    <div class="column-start-flex">
+      <img class="solutions-graphic-small" src="{% static 'main/logo.svg' %}">
+    </div>
+    <div class="home-title-col column-start-flex" data-aos="fade-up">
+      <h1 class="splash-title">
+        The future today.
+      </h1>
+      <h2 class="splash-title">
+        Katapult is the next generation of outdoor advertising.
+      </h2>
+      <h3 class="splash-title">
+        Our tech, platform, and methods allow you to focus on what matters: your business.
+      </h3>
+      <div class="hunned-width start-row-flex">
+        <div class="nav-button" style="margin: 0; margin-top: 5vh;">
+          <a class="invisible-link" href="{% url 'signup' %}">
+            Get started
+          </a>
         </div>
       </div>
-  <h1>WHY KATAPULT?</h1>
+    </div>
+  </div>
+  <div class="space-evenly-row-flex">
+    <div class="home-title-col column-start-flex" data-aos="fade-up">
+      <h1 class="splash-title">
+        Next-gen tech
+      </h1>
+      <h2 class="splash-title">
+        Katapult is the next generation of outdoor advertising.
+      </h2>
+      <h3 class="splash-title">
+        Auto-segmentation: automatically find the demographics most likely to be customers.
+      </h3>
+      <h3 class="splash-title">
+        Auto-targeting: Automatically finds the most profitable adspaces.
+      </h3>
+      <h3 class="splash-title">
+        Analytics: TODO
+      </h3>
+      <div class="hunned-width start-row-flex">
+        <div class="nav-button" style="margin: 0; margin-top: 5vh;">
+          <a class="invisible-link" href="{% url 'signup' %}">
+            Get started
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="column-start-flex">
+      <img class="solutions-graphic" src="{% static 'main/buy.png' %}">
+    </div>
+  </div>
 </div>
-<div class="p-style">
-  <div class="bold-text">Businesses</div>
-  <p> Katapult allows businesses to advertise their products in never-before available physical advertising spaces, tapping into a numerous new sources of leasing availability, while maintaining competetive pricing models.</p>
-  <div class="bold-text">Owners</div>
-  <p>The average cost of building maintentence, utilities, and facility is $5.15 per square foot of building space annually. The average American building has anywhere from 12,000 square feet to 19,000 square feet. The math points toward the following: <i>buildings are hard to keep up.</i> </p>
-  <p> Having understood this, Katapult connects <i>you</i> with advertising entities that will allow you to provide a new source of revenue and make the ad-space leasing experience simple, direct, and worthwhile. </p>
+<div id="feature-3" class="feature-box">
+  <div class="space-evenly-row-flex">
+    <div class="column-start-flex">
+      <img class="solutions-graphic" src="{% static 'main/working.jpg' %}">
+    </div>
+    <div class="home-title-col column-start-flex" data-aos="fade-up">
+      <h1 class="splash-title">
+        Our service
+      </h1>
+      <h2 class="splash-title">
+        Automation done properly
+      </h2>
+      <h3 class="splash-title">
+        Focus on what matters to you. Leave everything else to us.
+      </h3>
+      <h2 class="splash-title">
+        Simplified processes
+      </h2>
+      <h3 class="splash-title">
+        Workflow, fees, etc. all open and simple.
+      </h3>
+      <h2 class="splash-title">
+        Human focused
+      </h2>
+      <h3 class="splash-title">
+        Though we are tech oriented, we put humans first.
+      </h3>
+      <div class="hunned-width start-row-flex">
+        <div class="nav-button" style="margin: 0; margin-top: 5vh;">
+          <a class="invisible-link" href="{% url 'signup' %}">
+            Get started
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
 {% block bottomScripts %}
-<script type="text/javascript">
-function showBusinessSolutions() {
-  document.getElementById("businessOptButton").style.backgroundColor = "#F14621"
-  document.getElementById("businessOptButton").style.color = "white"
-  document.getElementById("individualOptButton").style.backgroundColor = "white"
-  document.getElementById("individualOptButton").style.color = "black"
-  document.getElementById("business-solutions").style.display = "flex"
-  document.getElementById("business-solutions").scrollIntoView(true);
-  document.getElementById("individual-solutions").style.display = "none"
-}
-function showIndividualSolutions() {
-  document.getElementById("individualOptButton").style.backgroundColor = "#F14621"
-  document.getElementById("individualOptButton").style.color = "white"
-  document.getElementById("businessOptButton").style.backgroundColor = "white"
-  document.getElementById("businessOptButton").style.color = "black"
-  document.getElementById("individual-solutions").style.display = "flex"
-  document.getElementById("individual-solutions").scrollIntoView(true);
-  document.getElementById("business-solutions").style.display = "none"
-}
-</script>
-<script type="text/javascript">
-particlesJS("particles-js", {
-"particles": {
-"number": {
-"value": 80,
-"density": {
-"enable": true,
-"value_area": 800
-}
-},
-"color": {
-"value": "#F14621"
-},
-"shape": {
-"type": "circle",
-"stroke": {
-"width": 0,
-"color": "#000000"
-},
-"polygon": {
-"nb_sides": 5
-},
-"image": {
-"src": "img/github.svg",
-"width": 100,
-"height": 100
-}
-},
-"opacity": {
-"value": 0.5,
-"random": false,
-"anim": {
-"enable": false,
-"speed": 1,
-"opacity_min": 0.1,
-"sync": false
-}
-},
-"size": {
-"value": 3,
-"random": true,
-"anim": {
-"enable": false,
-"speed": 40,
-"size_min": 0.1,
-"sync": false
-}
-},
-"line_linked": {
-"enable": true,
-"distance": 150,
-"color": "#F14621",
-"opacity": 0.4,
-"width": 1
-},
-"move": {
-"enable": true,
-"speed": 1.603412060865523,
-"direction": "none",
-"random": false,
-"straight": false,
-"out_mode": "bounce",
-"bounce": false,
-"attract": {
-"enable": false,
-"rotateX": 1443.0708547789707,
-"rotateY": 1200
-}
-}
-},
-"interactivity": {
-"detect_on": "window",
-"events": {
-"onhover": {
-"enable": true,
-"mode": "grab"
-},
-"onclick": {
-"enable": true,
-"mode": "repulse"
-},
-"resize": true
-},
-"modes": {
-"grab": {
-"distance": 400,
-"line_linked": {
-  "opacity": 1
-}
-},
-"bubble": {
-"distance": 400,
-"size": 40,
-"duration": 2,
-"opacity": 8,
-"speed": 3
-},
-"repulse": {
-"distance": 200,
-"duration": 0.4
-},
-"push": {
-"particles_nb": 4
-},
-"remove": {
-"particles_nb": 2
-}
-}
-},
-"retina_detect": true
-}
-)
-</script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 {% endblock %}

@@ -401,6 +401,13 @@ header {
     background-position: 30% 0%;
 }
 
+#feature-3 {
+    background-image: url("background2.svg");
+    height: 200vh;
+    background-size: cover;
+    background-position: 30% 0%;
+}
+
 .blue-band {
     height: 10vh;
     width: 100vw;
@@ -416,10 +423,10 @@ header {
     width: 100vw;
     height: auto;
     z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-42%);
-    -moz-transform: translateX(-50%) translateY(-42%);
-    -webkit-transform: translateX(-50%) translateY(-42%);
-    transform: translateX(-50%) translateY(-42%);
+    -ms-transform: translateX(-50%) translateY(-45%);
+    -moz-transform: translateX(-50%) translateY(-45%);
+    -webkit-transform: translateX(-50%) translateY(-45%);
+    transform: translateX(-50%) translateY(-45%);
 }
 
 .feature-box .container {
@@ -781,6 +788,15 @@ a {
     justify-content: center;
     align-items: center;
     height: 28vw;
+}
+
+.solutions-graphic-small {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    height: 22vw;
 }
 
 #reason {
