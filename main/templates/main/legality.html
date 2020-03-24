@@ -1,0 +1,70 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Why Katapult{% endblock %}
+{% block head %}
+<link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+{% endblock %}
+{% block main %}
+<div id="feature-3" class="feature-box">
+  <div class="space-evenly-row-flex">
+    <div class="column-start-flex">
+      <img class="solutions-graphic" src="{% static 'main/legal.jpeg' %}">
+    </div>
+    <div class="home-title-col column-start-flex" data-aos="fade-up">
+      <h1 class="splash-title">
+        Legality check
+      </h1>
+      <h2 class="splash-title">
+        In most cities, stringent regulation is placed upon where outdoor advertising can be done.
+      </h2>
+      <form method="POST" id="form">
+        <input name="address" type="text">
+        <div class="hunned-width start-row-flex">
+            <div class="nav-button" style="margin: 0; margin-top: 5vh;" onclick="submitForm()">
+                Check
+            </div>
+        </div>
+      </form>
+      <h3 class="splash-title" id="loading-txt">
+        Loading...
+      </h2>
+      <h3 class="splash-title" id="legal-txt">
+        Most likely legal
+      </h2>
+      <h3 class="splash-title" id="illegal-txt">
+        Most likely illegal
+      </h2>
+  </div>
+</div>
+{% endblock %}
+{% block bottomScripts %}
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    function submitForm() {
+        var addy = document.querySelector('input').value
+        var request = new XMLHttpRequest()
+        document.querySelector('form').style.display = "none"
+        document.getElementById('loading-txt').style.display = "block"
+        request.open("POST", "/legality/")
+        request.onload = function() {
+            document.getElementById('loading-txt').style.display = "none"
+            console.log(request.responseText)
+            legal = JSON.parse(request.responseText)["legal"]
+            console.log(legal)
+            if (legal) {
+                console.log("showing legal txt")
+                document.getElementById('legal-txt').style.display = "block"
+            } else {
+                console.log("showing illegal txt")
+                document.getElementById('illegal-txt').style.display = "block"
+            }
+        }
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send('address='+addy)
+    }
+  </script>
+{% endblock %}

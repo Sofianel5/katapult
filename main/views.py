@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from users.models import Adspace, Seller
 from django.contrib.auth.decorators import login_required
 from users.forms import UserRegisterForm
+from .utils import legality_check
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
@@ -61,6 +64,10 @@ def blog(request):
     context = {}
     return render(request, 'main/blog.html', context)
 
+@csrf_exempt
 def legality(request):
     context = {}
+    if request.method == "POST":
+        address = request.POST['address']
+        return JsonResponse({"legal": legality_check(address)}, safe=False)
     return render(request, 'main/legality.html', context)

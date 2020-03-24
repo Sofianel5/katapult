@@ -235,6 +235,7 @@ header {
     font-family: 'Red Hat Text', sans-serif;
     padding: 1vh 1.5vw;
     font-size: 1.3vw;
+    cursor: pointer;
     font-weight: 600;
     color: white;
     background-color: #db3731;
@@ -454,6 +455,12 @@ h4 {
 .touchable:hover {
     background-color: #cc1100;
     color: white;
+}
+
+#loading-txt,
+#legal-txt,
+#illegal-txt {
+    display: none;
 }
 
 @keyframes grow {
