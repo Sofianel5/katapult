@@ -57,11 +57,26 @@
                   Why Katapult?
                 </div>
               </a>
-              <a href="{% url 'whykatapult' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+              <div style="height: 8vh" class="dropdown column-center-flex">
                 <div class="nav-link">
                   Resources
                 </div>
-              </a>
+                <div class="arrow-up"></div>
+                <div class="dropdownbox column-start-flex">
+                  <div class="dropdown-content start-row-flex">
+                    <a href="{% url 'legality-check' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                      <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
+                      Legality
+                    </a>
+                  </div>
+                  <div class="dropdown-content start-row-flex">
+                    <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                      <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
+                      Blog
+                    </a>
+                  </div>
+                </div>
+              </div>
               <div style="height: 8vh" class="dropdown column-center-flex">
                 <div class="nav-link">
                   Solutions

@@ -56,3 +56,11 @@ def profile(request):
 def info_leadership(request):
     context = {}
     return render(request, 'main/info-leadership.html', context)
+
+def blog(request):
+    context = {}
+    return render(request, 'main/blog.html', context)
+
+def legality(request):
+    context = {}
+    return render(request, 'main/legality.html', context)
