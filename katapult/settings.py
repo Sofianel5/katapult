@@ -25,7 +25,7 @@ SECRET_KEY = 'kf_1lt7&4_655=u4a)ljnux#w9+7#)#+nzv^2*@&9r#u%))m#d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.80.19.230']
 
 
 
