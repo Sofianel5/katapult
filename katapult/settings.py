@@ -25,7 +25,7 @@ SECRET_KEY = 'kf_1lt7&4_655=u4a)ljnux#w9+7#)#+nzv^2*@&9r#u%))m#d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.80.19.230']
+ALLOWED_HOSTS = ['54.80.19.230','katapult.systems']
 
 
 
@@ -122,9 +122,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 AUTH_USER_MODEL = 'users.Account'
-STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = "/signin/"
+
+AWS_ACCESS_KEY_ID = "AKIAUON5V5A26TORUU5C"
+AWS_SECRET_ACCESS_KEY = "5g3aNP9ucqRB5Tm/n+C8K3+3CitnOYsQAKXxsahJ"
+
+YOUR_S3_BUCKET = 'katapult-staticfiles'
+
+AWS_REGION = "us-east-1"
+DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % YOUR_S3_BUCKET
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+#AWS_S3_PUBLIC_URL_STATIC = "https://static.tracery.us/"
+AWS_DEFAULT_ACL = None

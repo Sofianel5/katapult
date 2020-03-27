@@ -3,3 +3,4 @@ requests
 xmltodict
 pandas
 selenium
+django-s3-storage

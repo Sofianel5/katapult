@@ -1,0 +1,1 @@
+/opt/bitnami/python/lib/python3.7/copyreg.py
