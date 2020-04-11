@@ -1,15 +1,17 @@
 {% extends "main/layout.html" %}
 {% load static %}
-{% block title %}Create an ad campaign{% endblock %}
+{% block title %}Browse Ad Spaces{% endblock %}
 {% block main %}
 <div class="full-width center-row-flex">
   <div class="pg-title">
-    Create an ad campaign
+    Browse Ad Spaces
   </div>
 </div>
 <div class="full-width center-row-flex">
+<div class="content-section">
+<div class="hunned-width center-row-flex">
   <div class="infotitle" style="margin-top: 3vh; text-align: center">
-    Yup! All you have to do is put in your product type and budget. <br>All data analysis is on us.
+    Please fill out these questions to maximize your advertisement selection experience.<br><br>The more specific your answers are, the more customized our results will be.
   </div>
 </div>
 <form method="POST">
@@ -19,11 +21,11 @@
     {{ hidden_field.errors }}
     {{ hidden_field }}
   {% endfor %}
-  <div class="full-width center-row-flex">
+  <div class="hunned-width center-row-flex">
     <div class="formsection column-start-flex">
       <span class="errors">{{ errormessage }}</span>
       <div class="formsubtitle start-row-flex">
-        Product type
+        What kind of product do you sell?
       </div>
       <div class="start-row-flex">
         {{ form.marketSegment }}
@@ -33,7 +35,7 @@
       </span>
     </div>
   </div>
-  <div class="full-width center-row-flex">
+  <div class="hunned-width center-row-flex">
     <div class="formsection column-start-flex">
       <div class="formsubtitle start-row-flex">
         Budget (in dollars)
@@ -46,8 +48,10 @@
       </span>
     </div>
   </div>
-  <div class="full-width center-row-flex">
-    <button type="submit" class="submitbtn">Buy Campaign</button>
+  <div class="hunned-width center-row-flex">
+    <button type="submit" class="submitbtn">Next</button>
   </div>
 </form>
+</div>
+</div>
 {% endblock %}

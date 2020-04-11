@@ -671,6 +671,11 @@ input:focus {
     outline: none;
 }
 
+input[type="checkbox"] {
+  width: 5px;
+  height: auto;
+}
+
 .submitbtn {
     width: 20vw;
     color: #cc1100;
