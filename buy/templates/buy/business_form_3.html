@@ -1,0 +1,40 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Browse Ad Spaces{% endblock %}
+{% block main %}
+<div class="full-width center-row-flex">
+  <div class="pg-title">
+    Browse Ad Spaces
+  </div>
+</div>
+<div class="full-width center-row-flex">
+<div class="content-section">
+<form method="POST">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field.errors }}
+    {{ hidden_field }}
+  {% endfor %}
+  <div class="hunned-width center-row-flex">
+    <div class="column-start-flex">
+      <span class="errors">{{ errormessage }}</span>
+      <div class="formsubtitle start-row-flex">
+        Target Demographics
+      </div>
+      <div class="column-start-flex">
+        <div class="start-row-flex">Age groups<br><input class="rangeinput" type="number" id="age1low" name="age1low"> to <input type="number" id="age2low" name="age2low"></div>
+        <div class="center-row-flex"><input type="checkbox" id="goal2" name="goal2">Increase viewership</div>
+        <div class="center-row-flex"><input type="checkbox" id="goal3" name="goal3">Increase publicity</div>
+        <div class="center-row-flex"><input type="checkbox" id="goal4" name="goal4">Build image</div>
+        <div class="center-row-flex"><input type="checkbox" id="goal5" name="goal5">Establish brand recognition</div>
+      </div>
+    </div>
+  </div>
+  <div class="hunned-width center-row-flex">
+    <button type="submit" class="submitbtn">Next</button>
+  </div>
+</form>
+</div>
+</div>
+{% endblock %}

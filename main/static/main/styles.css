@@ -192,6 +192,11 @@ header {
     margin-right: 3vw;
 }
 
+.rangeinput {
+    height: 10vh;
+    width: 10vw;
+}
+
 .nav-link {
     margin: 1vh 2vw 0 2vw;
     font-weight: 500;
@@ -672,7 +677,7 @@ input:focus {
 }
 
 input[type="checkbox"] {
-  width: 5px;
+  width: auto;
   height: auto;
 }
 
