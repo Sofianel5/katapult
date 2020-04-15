@@ -38,7 +38,7 @@ def buy(request):
                 context["errormessage"] = "Could not find any advertisments of specified price range."
                 return render(request, "buy/business_form.html", context)
             result.save()
-            context['matches'] = matches 
+            context['matches'] = matches
             context['coordinates'] = getCoordinates(matches)
             context['budget'] = result.budget
             print(context)
@@ -46,3 +46,6 @@ def buy(request):
             return render(request, "buy/campaign.html", context)
         else:
             return render(request, "buy/business_form.html", context)
+
+def business_form_2(request):
+    return render(request, "buy/business_form_2.html");
