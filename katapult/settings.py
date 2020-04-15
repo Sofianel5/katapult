@@ -26,10 +26,14 @@ SECRET_KEY = 'kf_1lt7&4_655=u4a)ljnux#w9+7#)#+nzv^2*@&9r#u%))m#d'
 DEBUG = True
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['52.22.151.89','54.80.19.230','katapult.systems']
 =======
 ALLOWED_HOSTS = ['54.80.19.230','katapult.systems','localhost']
 >>>>>>> d5fa178556e4ebcb24f1fbad0073faf2e65a107a
+=======
+ALLOWED_HOSTS = ['52.22.151.89','54.80.19.230','katapult.systems','localhost']
+>>>>>>> 7e2baac1bf097f48e6c7e615a9c1ae896bd12c92
 
 
 
