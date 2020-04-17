@@ -8,72 +8,78 @@
   </div>
 </div>
 <div class="full-width center-row-flex">
-<div class="content-section">
-<form method="POST" onsubmit="return false;">
-  {% csrf_token %}
-  {{ form.non_field_errors }}
-  {% for hidden_field in form.hidden_fields %}
-    {{ hidden_field.errors }}
-    {{ hidden_field }}
-  {% endfor %}
-  <div class="formsubtitle center-row-flex">
-    Target Demographics <br><br>
-  </div>
-  <div class="hunned-width center-row-flex">
-      <span class="errors">{{ errormessage }}</span>
-      <div class="center-row-flex">
-      <div class="column-start-flex">
-        <div class="start-row-flex" id="first">Age groups
-          <br>
-          <input class="rangeinput" type="number" id="age1low" name="age1low"> to <input class="rangeinput" type="number" id="age2low" name="age2low"><br></div>
-          <div class="center-row-flex" id="add1"><button id="button" value="Add" onClick="javascript:add1();">+</button></div><br>
-        Income bracket
-        <div class="start-row-flex"><input type="checkbox" id="income1" name="income1"><$10,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income2" name="income2">$10,000 - $25,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income3" name="income3">$25,000 - $50,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income4" name="income4">$50,000 - $100,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income5" name="income5">$100,000 - $250,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income6" name="income6">$250,000 - $500,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income7" name="income7">$500,000 - $1,000,000</div>
-        <div class="start-row-flex"><input type="checkbox" id="income8" name="income8">$1,000,000+</div>
-        <br>
-        Gender Demographics
-        <div class="start-row-flex"><input type="checkbox" id="male" name="male">Male</div>
-        <div class="start-row-flex"><input type="checkbox" id="female" name="femake">Female</div>
-        <div class="start-row-flex"><input type="checkbox" id="other" name="other">Other</div>
+  <div class="content-section">
+    <form method="POST" onsubmit="return false;">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field.errors }}
+      {{ hidden_field }}
+      {% endfor %}
+      <div class="formsubtitle center-row-flex">
+        Target Demographics <br><br>
       </div>
-      <div class="column-start-flex">
-        Interests
-        <div class="start-row-flex"><input type="text" id="interest1" name="interest1"></div>
-        <button id="button" value="Add" onClick:"javascript:add();">+</button>
-        <br>
-        Sentiments
-        <br><br>
-        Locations
-        <div class="start-row-flex"><input type="text" id="location1" name="location1"></div>
-        <button id="button" value="Add" onClick="javascript:add1();">+</button>
+      <div class="hunned-width center-row-flex">
+        <span class="errors">{{ errormessage }}</span>
+        <div class="center-row-flex">
+          <div class="column-start-flex">
+            <div class="column-start-flex" id="first">
+              <div class="start-row-flex">Age groups</div>
+              <div class="start-row-flex"><input class="rangeinput" type="number" id="age1low" name="age1low"> to <input class="rangeinput" type="number" id="age2low" name="age2low"><br></div>
+            </div>
+            <div class="center-row-flex" id="add1"><button id="button" value="Add" onClick="javascript:add1();">+</button></div><br>
+            <div class="column-start-flex">
+              Income bracket
+              <div class="start-row-flex"><input type="checkbox" id="income1" name="income1">	&lt;$10,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income2" name="income2">$10,000 - $25,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income3" name="income3">$25,000 - $50,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income4" name="income4">$50,000 - $100,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income5" name="income5">$100,000 - $250,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income6" name="income6">$250,000 - $500,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income7" name="income7">$500,000 - $1,000,000</div>
+              <div class="start-row-flex"><input type="checkbox" id="income8" name="income8">$1,000,000+</div>
+              <br>
+              Gender Demographics
+              <div class="start-row-flex"><input type="checkbox" id="male" name="male">Male</div>
+              <div class="start-row-flex"><input type="checkbox" id="female" name="femake">Female</div>
+              <div class="start-row-flex"><input type="checkbox" id="other" name="other">Other</div>
+            </div>
+          </div>
+          <div class="column-start-flex">
+            Interests
+            <div class="start-row-flex"><input type="text" id="interest1" name="interest1"></div>
+            <button id="button" value="Add" onClick:"javascript:add();">+</button>
+            <br>
+            Sentiments
+            <br><br>
+            Locations
+            <div class="start-row-flex"><input type="text" id="location1" name="location1"></div>
+            <button id="button" value="Add" onClick="javascript:add1();">+</button>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="hunned-width center-row-flex">
+        <button type="submit" class="submitbtn">Submit</button>
+      </div>
+    </form>
   </div>
-  <div class="hunned-width center-row-flex">
-    <button type="submit" class="submitbtn">Submit</button>
-  </div>
-</form>
 </div>
-</div>
-<script>
+  <script>
 function add1() {
   //Create an input type dynamically.
   console.log("debug1");
+  var d = document.createElement("div");
   var element1 = document.createElement("input");
   var text = document.createTextNode(" to ");
   var br = document.createElement("BR");
   var element2 = document.createElement("input");
-  var but = document.createElement("button");
   console.log("debug2");  
 
 //Assign different attributes to the element.
   console.log("debug3");
+  d.classList.add("start-row-flex");
+  element1.classList.add("rangeinput");
+  element2.classList.add("rangeinput");
   element1.setAttribute("type", "number");
   element1.setAttribute("value", "");
   element1.setAttribute("name", "age1low");
@@ -81,18 +87,16 @@ function add1() {
   element2.setAttribute("type", "number");
   element2.setAttribute("value", "");
   element2.setAttribute("name", "age1low");
-  but.setAttribute("value", "Add");
-  but.setAttribute("onClick", "javascript:add1();")
 
   // 'foobar' is the div id, where new fields are to be added
   var foo = document.getElementById("first");
 
   //Append the element in page (in span).
-  foo.appendChild(element1);
-  foo.appendChild(text);
-  foo.appendChild(element2);
-  foo.appendChild(br);
-  foo.appendChild(but);
+  d.appendChild(element1);
+  d.appendChild(text);
+  d.appendChild(element2);
+  d.appendChild(br);
+  foo.appendChild(d);
 
 }
 </script>
