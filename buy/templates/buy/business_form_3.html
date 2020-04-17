@@ -2,23 +2,6 @@
 {% load static %}
 {% block title %}Browse Ad Spaces{% endblock %}
 {% block main %}
-<script>
-function add() {
-  //Create an input type dynamically.
-  var element = document.createElement("input");    
-
-//Assign different attributes to the element.
-  element.setAttribute("type", "text");
-  element.setAttribute("value", "");
-  element.setAttribute("name", "age1low");
-
-  // 'foobar' is the div id, where new fields are to be added
-  var foo = document.getElementById("add");
-
-  //Append the element in page (in span).
-  foo.appendChild(element);
-}
-</script>
 <div class="full-width center-row-flex">
   <div class="pg-title">
     Browse Ad Spaces
@@ -26,7 +9,7 @@ function add() {
 </div>
 <div class="full-width center-row-flex">
 <div class="content-section">
-<form method="POST">
+<form method="POST" onsubmit="return false;">
   {% csrf_token %}
   {{ form.non_field_errors }}
   {% for hidden_field in form.hidden_fields %}
@@ -40,10 +23,10 @@ function add() {
       <span class="errors">{{ errormessage }}</span>
       <div class="center-row-flex">
       <div class="column-start-flex">
-        <div class="start-row-flex">Age groups
+        <div class="start-row-flex" id="first">Age groups
           <br>
-          <input class="rangeinput" type="number" id="age1low" name="age1low"> to <input type="number" id="age2low" name="age2low"></div>
-          <div class="center-row-flex" id="add"><button id="button" value="Add" onClick:"javascript:add();">+</button></div><br>
+          <input class="rangeinput" type="number" id="age1low" name="age1low"> to <input class="rangeinput" type="number" id="age2low" name="age2low"><br></div>
+          <div class="center-row-flex" id="add1"><button id="button" value="Add" onClick="javascript:add1();">+</button></div><br>
         Income bracket
         <div class="start-row-flex"><input type="checkbox" id="income1" name="income1"><$10,000</div>
         <div class="start-row-flex"><input type="checkbox" id="income2" name="income2">$10,000 - $25,000</div>
@@ -68,7 +51,7 @@ function add() {
         <br><br>
         Locations
         <div class="start-row-flex"><input type="text" id="location1" name="location1"></div>
-        <button id="button" value="Add" onClick:"javascript:add();">+</button>
+        <button id="button" value="Add" onClick="javascript:add1();">+</button>
       </div>
     </div>
   </div>
@@ -78,4 +61,39 @@ function add() {
 </form>
 </div>
 </div>
+<script>
+function add1() {
+  //Create an input type dynamically.
+  console.log("debug1");
+  var element1 = document.createElement("input");
+  var text = document.createTextNode("to");
+  var br = document.createElement("BR");
+  var element2 = document.createElement("input");
+  var but = document.createElement("button");
+  console.log("debug2");  
+
+//Assign different attributes to the element.
+  console.log("debug3");
+  element1.setAttribute("type", "number");
+  element1.setAttribute("value", "");
+  element1.setAttribute("name", "age1low");
+  console.log("debug4");
+  element2.setAttribute("type", "number");
+  element2.setAttribute("value", "");
+  element2.setAttribute("name", "age1low");
+  but.setAttribute("value", "Add");
+  but.setAttribute("onClick", "javascript:add1();")
+
+  // 'foobar' is the div id, where new fields are to be added
+  var foo = document.getElementById("first");
+
+  //Append the element in page (in span).
+  foo.appendChild(element1);
+  foo.appendChild(text);
+  foo.appendChild(element2);
+  foo.appendChild(br);
+  foo.appendChild(but);
+
+}
+</script>
 {% endblock %}
