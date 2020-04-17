@@ -7,35 +7,37 @@
     Your data driven advertisement plan
   </div>
 </div>
-<div class="full-width center-row-flex">
-    <div class="mapholder" id="map" style="width: 80vw; height: 40vh;">
+<div class="space-evenly-row-flex">
+    <div class="column-start-flex">
+        <div class="hunned-width center-row-flex">
+            <div class="infotitle" style="margin-top: 4vh; width:40vw;">
+                {% load humanize %}
+                Based off of your budget of ${{ budget|floatformat:2|intcomma }}, we identified the best{% if matches|length != 1 %} adspaces{% else %} adspace{% endif %} for you using our machine learning technology.
+            </div>
+        </div>
+        {% for match in matches %}
+        <div class="start-row-flex" style="margin-top: 4vh;">
+            <div class="column-start-flex">
+                    <img src="{{ match.image.url }}" class="showcase-img">
+            </div>
+            <div class="column-start-flex">
+                <div class="section-title">
+                    {{ match.title }}
+                </div>
+                <div class="section-title">
+                    {{ match.description }}
+                </div>
+                <div class="section-title">
+                    {{ match.address }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mapholder" id="map" style="width: 30vw; height: 80vh;">
 
     </div>
 </div>
-<div class="full-width center-row-flex">
-    <div class="infotitle" style="margin-top: 4vh;">
-        {% load humanize %}
-        Based off of your budget of ${{ budget|floatformat:2|intcomma }}, we identified the best{% if matches|length != 1 %} adspaces{% else %} adspace{% endif %} for you using our machine learning technology.
-    </div>
-</div>
-{% for match in matches %}
-<div class="full-width start-row-flex" style="margin-top: 4vh; margin-left: 20vw;">
-    <div class="column-start-flex">
-            <img src="{{ match.image.url }}" class="showcase-img">
-    </div>
-    <div class="column-start-flex">
-        <div class="section-title">
-            {{ match.title }}
-        </div>
-        <div class="section-title">
-            {{ match.description }}
-        </div>
-        <div class="section-title">
-            {{ match.address }}
-        </div>
-    </div>
-</div>
-{% endfor %}
 {% endblock %}
 {% block bottomScripts %}
 <script>

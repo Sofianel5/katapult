@@ -31,4 +31,4 @@ urlpatterns = [
     path("buy/", include("buy.urls")),
     path("sell/", include("sell.urls")),
     path("more-info/", user_views.more_info, name="more-info")
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

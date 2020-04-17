@@ -118,7 +118,7 @@ class Adspace(models.Model):
     width = models.FloatField()
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
     address = models.CharField(max_length=500)
-    image = models.ImageField(default="default.jpg", upload_to="adspace_pics")
+    image = models.ImageField(default="adspace_pics/default.jpg", upload_to="adspace_pics")
     description = models.TextField()
     renter = models.ForeignKey(Buyer, on_delete=models.DO_NOTHING,null=True, blank=True)
     active = models.BooleanField(default=True)

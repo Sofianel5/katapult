@@ -195,6 +195,7 @@ header {
 .rangeinput {
     height: 2.5vh;
     width: 4vh;
+}
 
 .nav-link {
     margin: 1vh 2vw 0 2vw;
@@ -676,8 +677,8 @@ input:focus {
 }
 
 input[type="checkbox"] {
-  width: auto;
-  height: auto;
+    width: auto;
+    height: auto;
 }
 
 .submitbtn {
