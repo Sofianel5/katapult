@@ -54,11 +54,15 @@
             </div>
               <div class="start-row-flex"><button id="button" value="Add" onClick="javascript:add2();">+</button></div>
             <br>
+            <div class="column-start-flex" id="secthir">
             <div class="start-row-flex">Sentiments</div>
+              <div class="start-row-flex"><input type="text" placeholder="Positive"><input class="rangeinput" type="numbers" placeholder="1.0"></div></div>
+              <div class="start-row-flex"><button id="button" value="Add" onClick="javascript:add4();">+</button></div>
             <br><br>
+            <div class="column-start-flex" id="third">
             Locations
-            <div class="start-row-flex"><input type="text" id="location1" name="location1"></div>
-            <button id="button" value="Add" onClick="javascript:add1();">+</button>
+            <div class="start-row-flex"><input type="text" id="location1" name="location1"></div></div>
+            <button id="button" value="Add" onClick="javascript:add3();">+</button>
             </div>
           </div>
         </div>
@@ -95,6 +99,7 @@ function add1() {
   foo.appendChild(d);
 
 }
+
 function add2() {
   var d = document.createElement("div");
   var element1 = document.createElement("input");
@@ -106,6 +111,40 @@ function add2() {
 
   // 'foobar' is the div id, where new fields are to be added
   var foo = document.getElementById("second");
+
+  //Append the element in page (in span).
+  d.appendChild(element1);
+  foo.appendChild(d);
+}
+
+function add3() {
+  var d = document.createElement("div");
+  var element1 = document.createElement("input");
+
+//Assign different attributes to the element.
+  d.classList.add("start-row-flex");
+  element1.setAttribute("type", "text");
+  element1.setAttribute("value", "");
+
+  // 'foobar' is the div id, where new fields are to be added
+  var foo = document.getElementById("third");
+
+  //Append the element in page (in span).
+  d.appendChild(element1);
+  foo.appendChild(d);
+}
+
+function add4() {
+  var d = document.createElement("div");
+  var element1 = document.createElement("input");
+
+//Assign different attributes to the element.
+  d.classList.add("start-row-flex");
+  element1.setAttribute("type", "text");
+  element1.setAttribute("value", "");
+
+  // 'foobar' is the div id, where new fields are to be added
+  var foo = document.getElementById("third");
 
   //Append the element in page (in span).
   d.appendChild(element1);
