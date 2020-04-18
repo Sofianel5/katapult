@@ -19,13 +19,13 @@
       <div class="formsubtitle center-row-flex">
         Target Demographics <br><br>
       </div>
-      <div class="hunned-width center-row-flex">
         <span class="errors">{{ errormessage }}</span>
         <div class="center-row-flex">
           <div class="column-start-flex">
+            <div id="col1">
             <div class="column-start-flex" id="first">
               <div class="start-row-flex">Age groups</div>
-              <div class="start-row-flex"><input class="rangeinput" type="number" id="age1low" name="age1low"> to <input class="rangeinput" type="number" id="age2low" name="age2low"><br></div>
+              <div class="start-row-flex"><input class="rangeinput" type="number"> to <input class="rangeinput" type="number"><br></div>
             </div>
             <div class="center-row-flex" id="add1"><button id="button" value="Add" onClick="javascript:add1();">+</button></div><br>
             <div class="column-start-flex">
@@ -44,20 +44,24 @@
               <div class="start-row-flex"><input type="checkbox" id="female" name="femake">Female</div>
               <div class="start-row-flex"><input type="checkbox" id="other" name="other">Other</div>
             </div>
+            </div>
           </div>
           <div class="column-start-flex">
-            Interests
-            <div class="start-row-flex"><input type="text" id="interest1" name="interest1"></div>
-            <button id="button" value="Add" onClick:"javascript:add();">+</button>
+            <div id="col2">
+            <div class="column-start-flex" id="second">
+              <div class="start-row-flex">Keywords</div>
+              <div class="start-row-flex"><input type="text" id="interest1" name="interest1"></div>
+            </div>
+              <div class="start-row-flex"><button id="button" value="Add" onClick="javascript:add2();">+</button></div>
             <br>
-            Sentiments
+            <div class="start-row-flex">Sentiments</div>
             <br><br>
             Locations
             <div class="start-row-flex"><input type="text" id="location1" name="location1"></div>
             <button id="button" value="Add" onClick="javascript:add1();">+</button>
+            </div>
           </div>
         </div>
-      </div>
       <div class="hunned-width center-row-flex">
         <button type="submit" class="submitbtn">Submit</button>
       </div>
@@ -67,26 +71,19 @@
   <script>
 function add1() {
   //Create an input type dynamically.
-  console.log("debug1");
   var d = document.createElement("div");
   var element1 = document.createElement("input");
   var text = document.createTextNode(" to ");
-  var br = document.createElement("BR");
-  var element2 = document.createElement("input");
-  console.log("debug2");  
+  var element2 = document.createElement("input"); 
 
 //Assign different attributes to the element.
-  console.log("debug3");
   d.classList.add("start-row-flex");
   element1.classList.add("rangeinput");
   element2.classList.add("rangeinput");
   element1.setAttribute("type", "number");
   element1.setAttribute("value", "");
-  element1.setAttribute("name", "age1low");
-  console.log("debug4");
   element2.setAttribute("type", "number");
   element2.setAttribute("value", "");
-  element2.setAttribute("name", "age1low");
 
   // 'foobar' is the div id, where new fields are to be added
   var foo = document.getElementById("first");
@@ -95,9 +92,24 @@ function add1() {
   d.appendChild(element1);
   d.appendChild(text);
   d.appendChild(element2);
-  d.appendChild(br);
   foo.appendChild(d);
 
+}
+function add2() {
+  var d = document.createElement("div");
+  var element1 = document.createElement("input");
+
+//Assign different attributes to the element.
+  d.classList.add("start-row-flex");
+  element1.setAttribute("type", "text");
+  element1.setAttribute("value", "");
+
+  // 'foobar' is the div id, where new fields are to be added
+  var foo = document.getElementById("second");
+
+  //Append the element in page (in span).
+  d.appendChild(element1);
+  foo.appendChild(d);
 }
 </script>
 {% endblock %}
