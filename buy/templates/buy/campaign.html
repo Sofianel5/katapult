@@ -8,27 +8,25 @@
   </div>
 </div>
 <div class="space-evenly-row-flex">
-    <div class="column-start-flex">
+    <div class="adspaces-col column-start-flex">
         <div class="hunned-width center-row-flex">
-            <div class="infotitle" style="margin-top: 4vh; width:40vw;">
+            <div class="infotitle" style="margin: 4vh 0; width:40vw;">
                 {% load humanize %}
-                Based off of your budget of ${{ budget|floatformat:2|intcomma }}, we identified the best{% if matches|length != 1 %} adspaces{% else %} adspace{% endif %} for you using our machine learning technology.
+                Based off of your budget of ${{ budget|floatformat:2|intcomma }}, we identified the best{% if matches|length != 1 %} adspaces{% else %} adspace{% endif %} for you.
             </div>
         </div>
         <div class="gridcontainer">
             {% for match in matches %}
-            <div class="start-row-flex">
-                <div class="column-start-flex">
-                        <img src="{{ match.image.url }}" class="showcase-img">
-                </div>
-                <div class="column-start-flex">
-                    <div class="section-title">
+            <div class="adspace column-start-flex">
+                <div style="background-image: url('{{ match.image.url }}');" class="showcase-img"></div>
+                <div style="width: 100%" class="column-start-flex">
+                    <div style="width: 100%"  class="section-title">
                         {{ match.title }}
                     </div>
-                    <div class="section-title">
+                    <div style="width: 100%"  class="section-title">
                         {{ match.description }}
                     </div>
-                    <div class="section-title">
+                    <div style="width: 100%"  class="section-title">
                         {{ match.address }}
                     </div>
                 </div>
