@@ -20,14 +20,11 @@
             <div class="adspace column-start-flex">
                 <div style="background-image: url('{{ match.image.url }}');" class="showcase-img"></div>
                 <div style="width: 100%" class="column-start-flex">
-                    <div style="width: 100%"  class="section-title">
+                    <div style="width: 100%"  class="adspace-title">
                         {{ match.title }}
                     </div>
-                    <div style="width: 100%"  class="section-title">
-                        {{ match.description }}
-                    </div>
-                    <div style="width: 100%"  class="section-title">
-                        {{ match.address }}
+                    <div style="width: 100%"  class="adspace-cost adspace-title">
+                        ${{ match.direct_price|floatformat:2|intcomma }}
                     </div>
                 </div>
             </div>
