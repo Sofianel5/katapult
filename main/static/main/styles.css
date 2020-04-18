@@ -46,6 +46,12 @@
     align-items: center;
 }
 
+.gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
 .start-row-flex {
     display: -webkit-flex;
     display: -ms-flexbox;

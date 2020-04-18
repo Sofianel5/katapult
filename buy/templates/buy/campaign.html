@@ -15,27 +15,33 @@
                 Based off of your budget of ${{ budget|floatformat:2|intcomma }}, we identified the best{% if matches|length != 1 %} adspaces{% else %} adspace{% endif %} for you using our machine learning technology.
             </div>
         </div>
-        {% for match in matches %}
-        <div class="start-row-flex" style="margin-top: 4vh;">
-            <div class="column-start-flex">
-                    <img src="{{ match.image.url }}" class="showcase-img">
+        <div class="gridcontainer">
+            {% for match in matches %}
+            <div class="start-row-flex">
+                <div class="column-start-flex">
+                        <img src="{{ match.image.url }}" class="showcase-img">
+                </div>
+                <div class="column-start-flex">
+                    <div class="section-title">
+                        {{ match.title }}
+                    </div>
+                    <div class="section-title">
+                        {{ match.description }}
+                    </div>
+                    <div class="section-title">
+                        {{ match.address }}
+                    </div>
+                </div>
             </div>
-            <div class="column-start-flex">
-                <div class="section-title">
-                    {{ match.title }}
-                </div>
-                <div class="section-title">
-                    {{ match.description }}
-                </div>
-                <div class="section-title">
-                    {{ match.address }}
-                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div style="width: 30vw; height: 100vh">
+        <div style="position: fixed; width: 30vw; height: 80vh; bottom: 20;right: 20;">
+            <div class="mapholder" id="map" style="width: 30vw; height: 80vh;">
+
             </div>
         </div>
-        {% endfor %}
-    </div>
-    <div class="mapholder" id="map" style="width: 30vw; height: 80vh;">
-
     </div>
 </div>
 {% endblock %}
