@@ -56,7 +56,7 @@
             <br>
             <div class="column-start-flex" id="secthir">
             <div class="start-row-flex">Sentiments</div>
-              <div class="start-row-flex"><input type="text" placeholder="Positive"><input class="rangeinput" type="numbers" placeholder="1.0"></div></div>
+              <div class="start-row-flex"><input type="text" placeholder="Positive"><input class="rangeinput" type="number" placeholder="1.0"></div></div>
               <div class="start-row-flex"><button id="button" value="Add" onClick="javascript:add4();">+</button></div>
             <br><br>
             <div class="column-start-flex" id="third">
@@ -137,17 +137,22 @@ function add3() {
 function add4() {
   var d = document.createElement("div");
   var element1 = document.createElement("input");
+  var element2 = document.createElement("input");
 
 //Assign different attributes to the element.
   d.classList.add("start-row-flex");
   element1.setAttribute("type", "text");
   element1.setAttribute("value", "");
+  element2.classList.add("rangeinput");
+  element2.setAttribute("type", "number");
+  element2.setAttribute("value", "");
 
   // 'foobar' is the div id, where new fields are to be added
-  var foo = document.getElementById("third");
+  var foo = document.getElementById("secthir");
 
   //Append the element in page (in span).
   d.appendChild(element1);
+  d.appendChild(element2);
   foo.appendChild(d);
 }
 </script>
