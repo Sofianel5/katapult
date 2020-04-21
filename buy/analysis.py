@@ -65,7 +65,7 @@ def getCoordinates(matches):
         request = requests.get(f"https://maps.googleapis.com/maps/api/geocode/json?address={match.address}&key={GOOGLE_KEY}")
         response = dict(request.json())
         print(response)
-        coordinates.append(response['results'][0]['geometry']['location'])
+        coordinates.append({"coordinates": response['results'][0]['geometry']['location'], "match": match.pk})
     return coordinates
 
 

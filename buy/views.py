@@ -48,7 +48,7 @@ def buy(request):
             return render(request, "buy/business_form.html", context)
 
 def business_form_2(request):
-    return render(request, "buy/business_form_2.html");
+    return render(request, "buy/business_form_2.html")
 
 def business_form_3(request):
-    return render(request, "buy/business_form_3.html");
+    return render(request, "buy/business_form_3.html")

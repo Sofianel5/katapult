@@ -17,7 +17,7 @@
         </div>
         <div class="gridcontainer">
             {% for match in matches %}
-            <div class="adspace column-start-flex">
+            <div class="adspace column-start-flex" onmouseover="highlightMarker({{ match.pk }})" onmouseout="unhighlightMarker({{ match.pk }})">
                 <div style="background-image: url('{{ match.image.url }}');" class="showcase-img"></div>
                 <div style="width: 100%" class="column-start-flex">
                     <div style="width: 100%"  class="adspace-title">
@@ -42,18 +42,41 @@
 {% endblock %}
 {% block bottomScripts %}
 <script>
+    var regIcon;
+    var largeIcon;
+    var markers = {};
     function initMap() {
-        center = {{ coordinates.0|safe }}
+        center = {{ coordinates.0.coordinates |safe }}
         map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 10
         });
+        regIcon = {
+            url: "https://maps.google.com/mapfiles/ms/micons/blue.png",
+            scaledSize: new google.maps.Size(32, 32)
+        };
+        largeIcon = {
+            url: "https://maps.google.com/mapfiles/ms/micons/blue.png",
+            scaledSize: new google.maps.Size(48, 48)
+        };
         {% for coordinate in coordinates %}
-        var marker{{ forloop.counter0 }} = new google.maps.Marker({
-            position: {{ coordinate| safe |escape }},
+        var marker = new google.maps.Marker({
+            position: {{ coordinate.coordinates | safe |escape }},
             map: map,
+            icon: regIcon,
         });
+        markers['{{ coordinate.match }}'] = marker
         {% endfor %}
+    }
+    function highlightMarker(id) {
+        console.log("highlighting " +id)
+        marker = markers[id]
+        marker.setIcon(largeIcon)
+    }
+    function unhighlightMarker(id) {
+        console.log("unhighlighting "+id)
+        marker = markers[id]
+        marker.setIcon(regIcon)
     }
 </script>
 <script defer
