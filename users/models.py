@@ -124,3 +124,6 @@ class Adspace(models.Model):
     active = models.BooleanField(default=True)
     demographics = models.ForeignKey(DemographicProfile, on_delete=models.CASCADE,null=True, blank=True)
 
+class AdspaceImage(models.Model):
+    image = models.ImageField(default="adspace_pics/default.jpg", upload_to="adspace_pics")
+    adspace = models.ForeignKey(Adspace, related_name="images", on_delete=models.CASCADE)
