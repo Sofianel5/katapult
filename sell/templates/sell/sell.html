@@ -183,10 +183,10 @@
                 Photo
               </div>
               <div class="start-row-flex">
-                {{ form.image }}
+                <input name="images" type="file" multiple>
               </div>
               <span class="errors">
-              {{ form.image.errors.as_text }}
+              {{ imageerrors }}
               </span>
             </div>
           </div>

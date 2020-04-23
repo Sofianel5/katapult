@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import PublishAdspaceForm
-from users.models import Seller
+from users.models import Seller, AdspaceImage
 from utils import createDemographicProfile
 from django.contrib.auth.decorators import login_required
 
@@ -28,5 +28,8 @@ def sell(request):
             result.seller = seller
             result.demographics = createDemographicProfile(result.address, result.city, result.state, result.zip)
             result.save()
+            for f in request.FILES:
+                print(f)
+                AdspaceImage.objects.create(image=f, adpace=result)
             return redirect("main-landing")
     return render(request, "sell/sell.html", context)

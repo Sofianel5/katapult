@@ -149,9 +149,32 @@
               <div class="column-center-flex">
                 <div class="nav-button">
                   {% if user.is_authenticated %}
-                  <a class="invisible-link" href="{% url 'profile' %}">
-                  {{ user.name }}
-                  </a>
+                  <div style="height: 4vh" class="dropdown column-center-flex" style="height: 4vh;">
+                    <a class="invisible-link">
+                      {{ user.name }}
+                    </a>
+                    <div class="arrow-up"></div>
+                    <div class="dropdownbox column-start-flex">
+                      <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'profile' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                          <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
+                          My Profile
+                        </a>
+                      </div>
+                      <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'more-info' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                          <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
+                          Edit Profile
+                        </a>
+                      </div>
+                      <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'users/signout' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                          <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
+                          Logout
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                   {% else %}
                   <a class="invisible-link" href="{% url 'signup' %}">
                   Get Started
