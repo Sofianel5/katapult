@@ -1,194 +1,178 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>{% block title %}Katapult{% endblock %}</title>
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<head>
+    <title>{% block title %}Katapult{% endblock %}</title>
 
-        <!-- tags for creating tab icon -->
-        {% block head %}
-        {% endblock %}
-        <!-- Load in css -->
-        <link href="{% static 'main/styles.css' %}" rel="stylesheet"/>
-        <script src="{% static 'main/particles.min.js' %}"></script>
-         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
-        <!-- TODO: Optimize for search engines -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    </head>
-    <body>
-        <header class="justify start-row-flex">
-            <div class="start-row-flex">
-              <a href="/" style="color: black; text-decoration: none" class="start-row-flex">
+    <!-- tags for creating tab icon -->
+    {% block head %} {% endblock %}
+    <!-- Load in css -->
+    <link href="{% static 'main/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'main/particles.min.js' %}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+    <!-- TODO: Optimize for search engines -->
+
+</head>
+
+<body>
+    <header class="justify start-row-flex">
+        <div class="start-row-flex">
+            <a href="/" style="color: black; text-decoration: none" class="start-row-flex">
                 <img class="logo" src="{% static 'main/long-logo-white.svg' %}">
-              </a>
-            </div>
-            <div class="end-row-flex">
-              {% if user.is_authenticated %}
-              {% if user.is_seller %}
-              <a href="{% url 'sell' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
-                  <div class="nav-link">
+            </a>
+        </div>
+        <div class="end-row-flex">
+            {% if user.is_authenticated %} {% if user.is_seller %}
+            <a href="{% url 'sell' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                <div class="nav-link">
                     List adspace
-                  </div>
-              </a>
-              {% endif %}
-              {% if user.is_buyer %}
-              <a href="{% url 'buy' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
-                  <div class="nav-link">
+                </div>
+            </a>
+            {% endif %} {% if user.is_buyer %}
+            <a href="{% url 'buy' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                <div class="nav-link">
                     Browse Ad Spaces
-                  </div>
-              </a>
-              {% endif %}
-              <a href="{% url 'more-info' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
-                  <div class="nav-link">
+                </div>
+            </a>
+            {% endif %}
+            <a href="{% url 'more-info' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
+                <div class="nav-link">
                     Edit profile
-                  </div>
-              </a>
-              <a href="{% url 'users/signout' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
-                <div class="nav-link">
-                  Logout
                 </div>
-              </a>
-              {% else %}
-              <div style="height: 8vh" class="dropdown column-center-flex">
+            </a>
+            <a href="{% url 'users/signout' %}" style="color: black; text-decoration: none; height: 8vh" class="column-center-flex">
                 <div class="nav-link">
-                  Why Katapult?
+                    Logout
+                </div>
+            </a>
+            {% else %}
+            <div style="height: 8vh" class="dropdown column-center-flex">
+                <div class="nav-link">
+                    Why Katapult?
                 </div>
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'legality-check' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
-                      Convenience
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
-                      Affordability
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
-                      Insight
-                    </a>
-                  </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'legality-check' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span> Convenience
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span> Affordability
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span> Insight
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div style="height: 8vh" class="dropdown column-center-flex">
+            </div>
+            <div style="height: 8vh" class="dropdown column-center-flex">
                 <div class="nav-link">
-                  Resources
+                    Resources
                 </div>
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'legality-check' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
-                      Legality
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
-                      Blog
-                    </a>
-                  </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'legality-check' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span> Legality
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'blog' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span> Blog
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div style="height: 8vh" class="dropdown column-center-flex">
+            </div>
+            <div style="height: 8vh" class="dropdown column-center-flex">
                 <div class="nav-link">
-                  Solutions
+                    Solutions
                 </div>
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'solutions-businesses' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/businesses.svg' %}" class="icon"></span>
-                      Businesses
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/individual.svg' %}" class="icon"></span>
-                      Owners
-                    </a>
-                  </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'solutions-businesses' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/businesses.svg' %}" class="icon"></span> Businesses
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/individual.svg' %}" class="icon"></span> Owners
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div style="height: 8vh" class="dropdown column-center-flex">
+            </div>
+            <div style="height: 8vh" class="dropdown column-center-flex">
                 <div class="nav-link">
-                  Info
+                    Info
                 </div>
                 <div class="arrow-up"></div>
                 <div class="dropdownbox column-start-flex">
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'info-leadership' %}%" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/leadership.svg' %}" class="icon"></span>
-                      Company
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/news.svg' %}" class="icon"></span>
-                      News
-                    </a>
-                  </div>
-                  <div class="dropdown-content start-row-flex">
-                    <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                      <span class="icon-holder"><img src="{% static 'main/contact.svg' %}" class="icon"></span>
-                      Contact
-                    </a>
-                  </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'info-leadership' %}%" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/leadership.svg' %}" class="icon"></span> Company
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/news.svg' %}" class="icon"></span> News
+                        </a>
+                    </div>
+                    <div class="dropdown-content start-row-flex">
+                        <a href="{% url 'solutions-individuals' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                            <span class="icon-holder"><img src="{% static 'main/contact.svg' %}" class="icon"></span> Contact
+                        </a>
+                    </div>
                 </div>
-              </div>
-              {% endif %}
-              <div class="column-center-flex">
-                <div class="nav-button">
-                  {% if user.is_authenticated %}
-                  <div style="height: 4vh" class="dropdown column-center-flex" style="height: 4vh;">
-                    <a class="invisible-link">
-                      {{ user.name }}
-                    </a>
+            </div>
+            {% endif %}
+            <div class="column-center-flex">
+                {% if user.is_authenticated %}
+                <div style="height: 8vh" class="dropdown column-center-flex">
+                    <div class="nav-link">
+                        {{ user.name }}
+                    </div>
                     <div class="arrow-up"></div>
                     <div class="dropdownbox column-start-flex">
-                      <div class="dropdown-content start-row-flex">
-                        <a href="{% url 'profile' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                          <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
-                          My Profile
-                        </a>
-                      </div>
-                      <div class="dropdown-content start-row-flex">
-                        <a href="{% url 'more-info' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                          <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span>
-                          Edit Profile
-                        </a>
-                      </div>
-                      <div class="dropdown-content start-row-flex">
-                        <a href="{% url 'users/signout' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
-                          <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span>
-                          Logout
-                        </a>
-                      </div>
+                        <div class="dropdown-content start-row-flex">
+                            <a href="{% url 'profile' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                                <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span> My Profile
+                            </a>
+                        </div>
+                        <div class="dropdown-content start-row-flex">
+                            <a href="{% url 'more-info' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                                <span class="icon-holder"><img src="{% static 'main/blog.svg' %}" class="icon"></span> Edit Profile
+                            </a>
+                        </div>
+                        <div class="dropdown-content start-row-flex">
+                            <a href="{% url 'users/signout' %}" class="start-row-flex dropdown-txt" style="text-decoration:none">
+                                <span class="icon-holder"><img src="{% static 'main/law.svg' %}" class="icon"></span> Logout
+                            </a>
+                        </div>
                     </div>
-                  </div>
-                  {% else %}
-                  <a class="invisible-link" href="{% url 'signup' %}">
-                  Get Started
-                  </a>
-                  {% endif %}
                 </div>
-              </div>
+                {% else %}
+                <div class="nav-button">
+                    <a class="invisible-link" href="{% url 'signup' %}">
+            Get Started
+          </a> {% endif %}
+                </div>
             </div>
-        </header>
-        <div class="body-root">
-          {% block main %}
-          {% endblock %}
         </div>
-        {% block bottomScripts %}
-        {% endblock %}
-    </body>
+    </header>
+    <div class="body-root">
+        {% block main %} {% endblock %}
+    </div>
+    {% block bottomScripts %} {% endblock %}
+</body>
+
 </html>
