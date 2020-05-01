@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import CampaignCreationForm
 from .analysis import sortMatchingSegments, getCoordinates
-from users.models import Buyer
+from users.models import Buyer, Adspace
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -9,12 +9,23 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def buy(request):
     if request.method == "GET":
+        """
         form = CampaignCreationForm(request.POST)
         context = {}
         context['form'] = form
         context['user'] = request.user
         print("FORM ", form)
-        return render(request, "buy/business_form.html", context)
+        """
+        groups = [
+            {
+                "adspaces": Adspace.objects.all(),
+                "title": "All",
+            }
+        ]
+        context = {
+            "groups": groups
+        }
+        return render(request, "buy/landing.html", context)
     #FORM: take tags describing business, list of business locations
     else:
         form = CampaignCreationForm(request.POST)
@@ -52,3 +63,6 @@ def business_form_2(request):
 
 def business_form_3(request):
     return render(request, "buy/business_form_3.html")
+
+def adspace(request):
+    return render(request, "buy/adspace.html")

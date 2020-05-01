@@ -1,0 +1,19 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Browse Ad Spaces{% endblock %}
+{% block main %}
+{% for group in groups %}
+<div class="horizontal-scroll" style="margin-top: 10vh">
+    {% for adspace in group.adspaces %}
+    <div class="card">
+        <img src="{{ adspace.image.url }}">
+        <div class="info">
+            <div class="title">
+                {{ adspace.title }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

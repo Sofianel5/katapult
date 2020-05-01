@@ -899,3 +899,83 @@ a {
 .adspaces-col {
     width: 50vw;
 }
+
+.adspace-img-holder {
+    width: 45vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.adspace-main-img {
+    width: auto;
+    height: 50vh;
+    max-width: 45vw;
+}
+
+.adspace-info-holder {
+    width: 45vw;
+    height: 70vh;
+    padding-top: 4vh;
+}
+
+.adspace-info-holder div {
+    margin-bottom: 3vh;
+}
+
+.adspace-page-title {
+    margin-top: 8vh;
+    font-weight: 500;
+}
+
+.adsp-buttons-row {
+    width: 100%;
+}
+
+.adsp-button {
+    border: 1px solid #084A75;
+    padding: 1vh 1vw;
+    text-transform: uppercase;
+    width: 10vw;
+    height: 4vh;
+    line-height: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.adsp-button:hover {
+    font-weight: 500;
+}
+
+.horizontal-scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 30vh;
+    padding: 2.5vh 0;
+}
+
+.horizontal-scroll .card {
+    display: inline-block;
+    width: 30vw;
+    height: 30vh;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2vh;
+    margin: 0 1vw;
+    overflow: hidden;
+}
+
+.card img {
+    height: 20vh;
+    width: 30vw;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.card .info {
+    padding: 1vh;
+}
+
+.card .info .title {
+    font-weight: 600;
+}
