@@ -18,9 +18,21 @@ def buy(request):
         """
         groups = [
             {
+                "adspaces": [Adspace.objects.get(pk=2), ],
+                "title": "Featured Adspaces"
+            },
+            {
                 "adspaces": Adspace.objects.all(),
                 "title": "All",
-            }
+            }, 
+            {
+                "adspaces": Adspace.objects.filter(direct_price__lte=2000),
+                "title": "Spaces less than $2000"
+            },
+            { 
+                "adspaces": Adspace.objects.filter(direct_price__lte=20000),
+                "title": "Spaces less than $20000"
+            },
         ]
         context = {
             "groups": groups
