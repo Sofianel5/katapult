@@ -1214,6 +1214,7 @@ a {
     border-radius: 2vh;
     margin: 0 1vw;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card img {
