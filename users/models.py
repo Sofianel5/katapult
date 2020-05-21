@@ -140,7 +140,7 @@ class Adspace(models.Model):
             days = 730
         elif self.term_length == "3m":
             days = 1095 
-        return days / self.direct_price
+        return self.direct_price / days
 
 class AdspaceImage(models.Model):
     image = models.ImageField(default="adspace_pics/default.jpg", upload_to="adspace_pics")
