@@ -124,6 +124,24 @@ class Adspace(models.Model):
     active = models.BooleanField(default=True)
     demographics = models.ForeignKey(DemographicProfile, on_delete=models.CASCADE,null=True, blank=True)
 
+    @property
+    def price_per_day(self):
+        if self.term_length == "2w":
+            days = 12
+        elif self.term_length == "1m":
+            days = 30
+        elif self.term_length == "3m":
+            days = 90
+        elif self.term_length == "6m":
+            days = 180
+        elif self.term_length == "1y":
+            days = 365
+        elif self.term_length == "2y":
+            days = 730
+        elif self.term_length == "3m":
+            days = 1095 
+        return days / self.direct_price
+
 class AdspaceImage(models.Model):
     image = models.ImageField(default="adspace_pics/default.jpg", upload_to="adspace_pics")
     adspace = models.ForeignKey(Adspace, related_name="images", on_delete=models.CASCADE)

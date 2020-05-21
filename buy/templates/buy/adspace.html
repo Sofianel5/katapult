@@ -2,13 +2,11 @@
 {% load static %}
 {% block title %}Browse Ad Spaces{% endblock %}
 {% block main %}
-<div class="container">
+<div class="space-evenly-row-flex viewcontainer">
 
   <!-- Left Column / Headphones Image -->
-  <div class="left-column">
-    <img data-image="black" src="images/black.png" alt="">
-    <img data-image="blue" src="images/blue.png" alt="">
-    <img data-image="red" class="active" src="images/red.png" alt="">
+  <div class="column-center-flex left-column">
+    <img data-image="red" class="active" src="{{ adspace.image.url }}" alt="">
   </div>
 
 
@@ -17,9 +15,9 @@
 
     <!-- Product Description -->
     <div class="product-description">
-      <span>Headphones</span>
-      <h1>Beats EP</h1>
-      <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+      <span>{{ adspace.city }}</span>
+      <h1>{{ adspace.title }}</h1>
+      <p>{{ adspace.description }}</p>
     </div>
 
     <!-- Product Configuration -->
@@ -62,7 +60,8 @@
 
     <!-- Product Pricing -->
     <div class="product-price">
-      <span>148$</span>
+      {% load humanize %}
+      <span>${{ adspace.price_per_day|floatformat:2|intcomma }}/day</span>
       <a href="#" class="cart-btn">Add to cart</a>
     </div>
   </div>

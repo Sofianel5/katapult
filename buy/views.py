@@ -76,5 +76,7 @@ def business_form_2(request):
 def business_form_3(request):
     return render(request, "buy/business_form_3.html")
 
-def adspace(request):
-    return render(request, "buy/adspace.html")
+def view_space(request, pk):
+    adspace = Adspace.objects.get(pk=pk)
+    context = {'adspace':adspace}
+    return render(request, "buy/adspace.html", context)
