@@ -478,7 +478,7 @@ h4 {
 }
 
 .viewcontainer {
-    margin: 0 auto;
+    margin: 5vh auto;
     padding: 15px;
     display: flex;
 }
