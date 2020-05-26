@@ -1,0 +1,79 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Reserve Ad Space{% endblock %}
+{% block main %}
+<div class="reserve-page-holder"> 
+    <div class="full-width start-row-flex">
+        <div class="carousel-title">
+        Reserve {{ adspace.title }}
+        </div>
+    </div>
+    <div class="center-row-flex">
+        <div id="calendar"></div>
+    </div>
+    <div class="space-evenly-row-flex">
+        <div class="container">
+            <div class="row">
+                <div class='col-sm-6'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' name="start" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker();
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class='col-sm-6'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' name="stop" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="center-row-flex full-width">
+        <a href="#" class="cart-btn">Reserve</a>
+    </div>
+</div>
+{% endblock %}
+{% block bottomScripts %}
+$('#calendar').fullCalendar({
+    header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+    },
+    defaultDate: '2018-11-16',
+    navLinks: true,
+    eventLimit: true,
+    events: [
+    {% for reservation in adspace.campaigns%}
+        {
+            title: 'Unavailable',
+            start: '{{ reservation.start|date:"Y-m-d" }}',
+            end: '{{ reservation.end|date:"Y-m-d" }}'
+        },
+    {% endfor %}
+    ]
+});
+{% endblock %}

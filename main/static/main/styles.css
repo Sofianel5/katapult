@@ -1257,3 +1257,7 @@ a {
     font-weight: 600;
     margin-left: 2vw;
 }
+
+.reserve-page-holder {
+    padding: 4vh 4vw;
+}

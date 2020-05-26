@@ -5,3 +5,6 @@ class CampaignCreationForm(forms.ModelForm):
     class Meta:
         model = Campaign
         fields = ['marketSegment', 'budget']
+
+class ReserveForm(forms.ModelForm):
+    pass

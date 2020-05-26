@@ -80,3 +80,8 @@ def view_space(request, pk):
     adspace = Adspace.objects.get(pk=pk)
     context = {'adspace':adspace}
     return render(request, "buy/adspace.html", context)
+
+def reserve(request, pk):
+    adspace = Adspace.objects.get(pk=pk)
+    context = {'adspace':adspace}
+    return render(request, "buy/reserve.html", context)
