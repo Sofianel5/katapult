@@ -505,6 +505,16 @@ h4 {
     transition: all 0.3s ease;
 }
 
+.left-column div {
+    font-size: 12px;
+    margin: 5vw 5vh;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .left-column img.active {
     opacity: 1;
 }

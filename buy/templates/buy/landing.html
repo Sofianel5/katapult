@@ -6,7 +6,7 @@
 <div class="carousel-title" style="margin-top: 10vh">{{ group.title }}</div>
 <div class="horizontal-scroll">
     {% for adspace in group.adspaces %}
-    <div class="card" onclick="location.replace('/buy/view/{{ adspace.id }}/')">
+    <a class="card" href="/buy/view/{{ adspace.id }}" style="text-decoration: none">
         <img src="{{ adspace.image.url }}">
         <div class="info">
             <div class="title">
@@ -21,7 +21,7 @@
                 {{ adspace.address }}
             </div>
         </div>
-    </div>
+    </a>
     {% endfor %}
 </div>
 {% endfor %}
