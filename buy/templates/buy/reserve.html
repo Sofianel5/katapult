@@ -1,6 +1,24 @@
 {% extends 'main/layout.html' %}
 {% load static %}
 {% block title %}Reserve Ad Space{% endblock %}
+{% block head %}
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+
+{% endblock %}
 {% block main %}
 <div class="reserve-page-holder">
     <div class="full-width start-row-flex">
@@ -12,7 +30,7 @@
         <div id="calendar"></div>
     </div>
     <div class="space-evenly-row-flex">
-        <div class="container">
+        <div class="container center-row-flex">
             <div class="row">
                 <div class='col-sm-6'>
                     <div class="form-group">
@@ -31,7 +49,7 @@
                 </script>
             </div>
         </div>
-        <div class="container">
+        <div class="container center-row-flex">
             <div class="row">
                 <div class='col-sm-6'>
                     <div class="form-group">
@@ -57,6 +75,12 @@
 </div>
 {% endblock %}
 {% block bottomScripts %}
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script>
 $('#calendar').fullCalendar({
     header: {
         left: 'prev,next today',
@@ -76,4 +100,5 @@ $('#calendar').fullCalendar({
     {% endfor %}
     ]
 });
+</script>
 {% endblock %}
