@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Reserve Ad Space{% endblock %}
 {% block main %}
-<div class="reserve-page-holder"> 
+<div class="reserve-page-holder">
     <div class="full-width start-row-flex">
         <div class="carousel-title">
         Reserve {{ adspace.title }}
@@ -67,7 +67,7 @@ $('#calendar').fullCalendar({
     navLinks: true,
     eventLimit: true,
     events: [
-    {% for reservation in adspace.campaigns%}
+    {% for reservation in adspace.campaigns.all%}
         {
             title: 'Unavailable',
             start: '{{ reservation.start|date:"Y-m-d" }}',
