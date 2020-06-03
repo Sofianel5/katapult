@@ -26,12 +26,12 @@ def buy(request):
                 "title": "All",
             }, 
             {
-                "adspaces": Adspace.objects.filter(direct_price__lte=2000),
-                "title": "Spaces less than $2000"
+                "adspaces": Adspace.objects.filter(price_per_day__lte=2000),
+                "title": "Spaces less than $200/day"
             },
             { 
-                "adspaces": Adspace.objects.filter(direct_price__lte=20000),
-                "title": "Spaces less than $20000"
+                "adspaces": Adspace.objects.filter(price_per_day__lte=20000),
+                "title": "Spaces less than $100/day"
             },
         ]
         context = {
