@@ -138,8 +138,10 @@ class Adspace(models.Model):
             days = 365
         elif self.term_length == "2y":
             days = 730
-        elif self.term_length == "3m":
+        elif self.term_length == "3y":
             days = 1095 
+        else:
+            days = 1
         return self.direct_price / days
 
 class AdspaceImage(models.Model):

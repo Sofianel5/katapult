@@ -7,5 +7,6 @@ urlpatterns = [
     path("form2", views.business_form_2, name="form2"),
     path("form3", views.business_form_3, name="form3"),
     path("view/<int:pk>/", views.view_space, name="adspace"),
-    path("reserve/<int:pk>/", views.reserve, name="reserve")
+    path("reserve/<int:pk>/", views.reserve, name="reserve"),
+    path("success/", views.success, name="success")
 ]

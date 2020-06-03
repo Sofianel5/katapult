@@ -87,3 +87,6 @@ def reserve(request, pk):
     adspace = Adspace.objects.get(pk=pk)
     context = {'adspace':adspace}
     return render(request, "buy/reserve.html", context)
+
+def success(request):
+    return render(request, "buy/success.html")
