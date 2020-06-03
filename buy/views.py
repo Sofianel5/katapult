@@ -28,11 +28,11 @@ def buy(request):
                 "title": "All",
             }, 
             {
-                "adspaces": lt100,
+                "adspaces": lt200,
                 "title": "Spaces less than $200/day"
             },
             { 
-                "adspaces": lt200,
+                "adspaces": lt100,
                 "title": "Spaces less than $100/day"
             },
         ]
