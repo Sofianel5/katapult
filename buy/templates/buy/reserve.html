@@ -72,6 +72,13 @@
     <div class="center-row-flex full-width">
         <a href="#" class="cart-btn">Reserve</a>
     </div>
+    <div style="width: 30vw; height: 100vh">
+        <div style="position: fixed; width: 30vw; height: 80vh; bottom: 20;right: 20;">
+            <div class="mapholder" id="map" style="width: 30vw; height: 80vh;">
+
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 {% block bottomScripts %}
@@ -100,5 +107,46 @@ $('#calendar').fullCalendar({
     {% endfor %}
     ]
 });
+</script>
+<script>
+    var regIcon;
+    var largeIcon;
+    var markers = {};
+    function initMap() {
+        center = {{ coordinates.0.coordinates |safe }}
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 10
+        });
+        regIcon = {
+            url: "https://maps.google.com/mapfiles/ms/micons/blue.png",
+            scaledSize: new google.maps.Size(32, 32)
+        };
+        largeIcon = {
+            url: "https://maps.google.com/mapfiles/ms/micons/blue.png",
+            scaledSize: new google.maps.Size(48, 48)
+        };
+        {% for coordinate in coordinates %}
+        var marker = new google.maps.Marker({
+            position: {{ coordinate.coordinates | safe |escape }},
+            map: map,
+            icon: regIcon,
+        });
+        markers['{{ coordinate.match }}'] = marker
+        {% endfor %}
+    }
+    function highlightMarker(id) {
+        console.log("highlighting " +id)
+        marker = markers[id]
+        marker.setIcon(largeIcon)
+    }
+    function unhighlightMarker(id) {
+        console.log("unhighlighting "+id)
+        marker = markers[id]
+        marker.setIcon(regIcon)
+    }
+</script>
+<script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWPqLxyV5wfu5STwy70HY0Dx9cL4KXV7I&callback=initMap">
 </script>
 {% endblock %}
