@@ -18,7 +18,7 @@
     <div class="product-description">
       <span>{{ adspace.city }}</span>
       <h1>{{ adspace.title }}</h1>
-      <p>{{ adspace.description }}</p>
+      <p>{{ adspace.width }}ft by {{ adspace.height }}ft</p>
     </div>
 
     <!-- Product Pricing -->
@@ -27,6 +27,7 @@
       <span>${{ adspace.price_per_day|floatformat:2|intcomma }}/day</span>
       <a href="{% url 'reserve' pk=adspace.id %}" class="cart-btn">Reserve</a>
     </div>
+    <p>{{ adspace.description }}</p>
   </div>
 </div>
 <script>
