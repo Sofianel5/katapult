@@ -16,6 +16,8 @@ def buy(request):
         context['user'] = request.user
         print("FORM ", form)
         """
+        lt200 = [a if a.price_per_day < 200 for a in Adspace.objects.all()]
+        lt100 = [a if a.price_per_day < 100 for a in Adspace.objects.all()]
         groups = [
             {
                 "adspaces": [Adspace.objects.get(pk=2), ],
@@ -26,11 +28,11 @@ def buy(request):
                 "title": "All",
             }, 
             {
-                "adspaces": Adspace.objects.filter(price_per_day__lte=2000),
+                "adspaces": lt100,
                 "title": "Spaces less than $200/day"
             },
             { 
-                "adspaces": Adspace.objects.filter(price_per_day__lte=20000),
+                "adspaces": lt200,
                 "title": "Spaces less than $100/day"
             },
         ]
