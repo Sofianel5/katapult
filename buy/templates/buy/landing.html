@@ -14,7 +14,7 @@
             </div>
             <div class="price">
             {% load humanize %}
-                ${{ adspace.direct_price|floatformat:2|intcomma }}
+                ${{ adspace.price_per_day|floatformat:2|intcomma }}/day
             </div>
             <div class="address">
             {% load humanize %}
