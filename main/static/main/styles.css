@@ -504,7 +504,7 @@ h4 {
     opacity: 0;
     transition: all 0.3s ease;
     max-height: 100vh;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 
 .left-column div {
