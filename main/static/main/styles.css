@@ -441,8 +441,7 @@ header {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: 100vw;
-    height: auto;
+    height: 90vh;
     z-index: 0;
     -ms-transform: translateX(-50%) translateY(-45%);
     -moz-transform: translateX(-50%) translateY(-45%);
