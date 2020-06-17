@@ -5,7 +5,7 @@ After cloning our repo, open your terminal. Make sure you have `python3` downloa
 Type the following command:  
 `pip install -r requirements.txt`
 
-Finally, type the following to run our project on your `localhost:8000`:
+Finally, type the following to run our project on your `localhost:8000`:  
 `python3 manage.py runserver`
 
 Type `localhost:8000` into the url line in the browser of your choice and enjoy!
