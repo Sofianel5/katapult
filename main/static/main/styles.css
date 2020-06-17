@@ -412,7 +412,7 @@ header {
     position: relative;
     width: 100vw;
     height: 80vh;
-    padding: 10vh 0;
+    /*padding: 10vh 0;*/
 }
 
 #feature-2 {
