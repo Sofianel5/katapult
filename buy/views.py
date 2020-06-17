@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .forms import CampaignCreationForm
+from .models import Campaign
 from .analysis import sortMatchingSegments, getCoordinates
 from users.models import Buyer, Adspace
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -84,9 +87,25 @@ def view_space(request, pk):
     return render(request, "buy/adspace.html", context)
 
 def reserve(request, pk):
-    adspace = Adspace.objects.get(pk=pk)
-    context = {'adspace':adspace}
-    return render(request, "buy/reserve.html", context)
+    if request.method == "GET":
+        adspace = Adspace.objects.get(pk=pk)
+        form = CampaignCreationForm()
+        context = {'adspace':adspace, 'form': form}
+        return render(request, "buy/reserve.html", context)
+    else:
+        adspace = Adspace.objects.get(pk=pk)
+        form = CampaignCreationForm(request.POST)
+        context = {'adspace':adspace, 'form': form}
+        if form.is_valid():
+            campaign = Campaign(**form.cleaned_data)
+            send_mail(
+                'New buy request',
+                'email: ' +request.user.email + "\n" + "pk: " + str(campaign.pk),
+                'admin@katapult.systems',
+                ['slarbi10@stuy.edu', 'lkronman10@stuy.edu'],
+                fail_silently=False,
+            )
+            return render(request, "buy/success.html")
+        print(form.errors)
+        return render(request, "buy/reserve.html", context)
 
-def success(request):
-    return render(request, "buy/success.html")

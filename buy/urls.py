@@ -8,5 +8,4 @@ urlpatterns = [
     path("form3", views.business_form_3, name="form3"),
     path("view/<int:pk>/", views.view_space, name="adspace"),
     path("reserve/<int:pk>/", views.reserve, name="reserve"),
-    path("success/", views.success, name="success")
 ]
