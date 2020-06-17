@@ -3,7 +3,7 @@ from users.models import DemographicProfile, Adspace
 import requests 
 import json
 
-GOOGLE_KEY = "AIzaSyDWPqLxyV5wfu5STwy70HY0Dx9cL4KXV7I"
+GOOGLE_KEY = "AIzaSyC24MIKKYi7s8lxwgTlAHe0wGaMiZeAhRY"
 def distance(demographic1, demographic2):
     sse = 0
     sse += (demographic1.AgePercentUnder5 - demographic2.AgePercentUnder5)**2

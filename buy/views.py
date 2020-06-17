@@ -83,7 +83,8 @@ def business_form_3(request):
 
 def view_space(request, pk):
     adspace = Adspace.objects.get(pk=pk)
-    context = {'adspace':adspace}
+    coordinates = getCoordinates([adspace])[0]
+    context = {'adspace':adspace, 'coordinates': coordinates}
     return render(request, "buy/adspace.html", context)
 
 def reserve(request, pk):
@@ -103,7 +104,7 @@ def reserve(request, pk):
                 'email: ' +request.user.email + "\n" + "pk: " + str(campaign.pk),
                 'admin@katapult.systems',
                 ['slarbi10@stuy.edu', 'lkronman10@stuy.edu'],
-                fail_silently=False,
+                fail_silently=True,
             )
             return render(request, "buy/success.html")
         print(form.errors)
