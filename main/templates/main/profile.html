@@ -13,7 +13,7 @@
 {% if user.is_seller %}
 <div class="full-width start-row-flex">
     <div class="column-start-flex">
-        <div class="splash-title" style="margin-top: 2vh">Your adspaces</div>
+        <div class="splash-title" style="margin-top: 2vh; color: #084A75">Your adspaces</div>
         {% if adspaces|length == 0 %}
         <div class="info-message">
             You haven't listed any adspace yet.
@@ -45,7 +45,7 @@
 {% endif %} {% if user.is_buyer %}
 <div class="full-width start-row-flex">
     <div class="column-start-flex">
-        <div class="splash-title">Your ad campaigns</div>
+        <div class="splash-title" style="color: #084A75">Your ad campaigns</div>
         <div class="info-message">
             You haven't started any campaigns yet.
         </div>
