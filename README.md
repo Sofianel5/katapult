@@ -8,4 +8,4 @@ Type the following command:
 Finally, type the following to run our project on your `localhost:8000`:
 `python3 manage.py runserver`
 
-Open your `localhost:8000` on the browser of your choice and enjoy!
+Type `localhost:8000` into the url line in the browser of your choice and enjoy!
