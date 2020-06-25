@@ -71,3 +71,7 @@ def legality(request):
         address = request.POST['address']
         return JsonResponse({"legal": legality_check(address)}, safe=False)
     return render(request, 'main/legality.html', context)
+
+
+def soon(request):
+    return render(request, "main/coming-soon.html")

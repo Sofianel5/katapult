@@ -14,4 +14,5 @@ urlpatterns = [
     path("info-leadership/", views.info_leadership, name='info-leadership'),
     path("legality/", views.legality, name="legality-check"),
     path("blog/", views.blog, name="blog"),
+    path("coming-soon/", views.soon, name="coming-soon")
 ]
