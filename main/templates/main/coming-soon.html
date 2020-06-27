@@ -34,30 +34,40 @@
     </header>
     <div class="body-root" id="feature-3">
         <div class="center-row-flex">
-            <h1 class="splash-title" style="margin-top: 15vh; color: white; width: auto">
-                Katapult is here to revolutionize outdoor advertising.
+          <div class="top-header" data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="50"
+          data-aos-duration="500">
+            <h1 class="splash-title" style="margin-top: 15vh; color: white; width: auto; text-align: center;">
+                <br>
+                Out-Of-Home Advertising is difficult.<br>
+                But it doesn't need to be.
             </h1>
+          </div>
         </div>
         <div class="center-row-flex">
             <h2 class="splash-title" style="width: auto;">
-                The evolution of outdoor advertising for the digital age.
-            </h2>
-        </div>
-        <div class="center-row-flex">
-            <h2 class="splash-title" style="width: auto;">
-                Express interest
+              <div class="first-subheader" data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="125"
+              data-aos-duration="500">
+                We will evaluate how much you can earn <i>today </i> through OOH advertising on your <br>property. You will hear back from us shortly via email. This service is free-of-charge.<br>
+                </div>
             </h2>
         </div>
         <div class="center-row-flex">
             <h2 class="splash-title" id="title" style="width: auto;">
             </h2>
         </div>
-        <div class="center-row-flex">
+        <div class="center-row-flex" data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="200"
+        data-aos-duration="500">
             <form class="column-start-flex" action="https://api.tracery.us/api/katapult/interest/" method="POST">
-                <input id="email" type="email" name="email" placeholder="Email" required>
-                <input id="address" type="text" placeholder="Address" name="address" required>
+                <input id="email" type="email" name="email" placeholder="Your work email..." required>
+                <input id="address" type="text" placeholder="Your property address..." name="address" required>
                 <div class="hunned-width center-row-flex">
-                    <div id="submitbtn" class="nav-button" style="background-color: #00c2cc; border: none; width: 13vw; text-align: center; margin-top: 5vh">Request</div>
+                    <div id="submitbtn" class="nav-button" style="background-color: #00c2cc; border: none; width: 13vw; text-align: center; margin-top: 2vh">REQUEST</div>
                 </div>
             </form>
         </div>
@@ -93,8 +103,11 @@
 
     }
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
-    
 </body>
 
 </html>

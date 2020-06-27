@@ -12,6 +12,16 @@
     font-size: 20px;
 }
 
+.top-header {
+  font-size: 80px;
+  text-align: center;
+}
+
+.first-subheader {
+  text-align: center;
+}
+
+
 .dropdown-content .start-row-flex:hover {
     text-decoration: underline;
 }
