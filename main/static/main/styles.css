@@ -364,6 +364,7 @@ header {
 
 .icon-circle img {
     margin: 0 auto;
+    width: 3vw;
 }
 
 .splash-title {
