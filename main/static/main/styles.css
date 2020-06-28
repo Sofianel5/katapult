@@ -13,17 +13,17 @@
 }
 
 .top-header {
-  font-size: 25px;
-  text-align: center;
+    font-size: 25px;
+    text-align: center;
 }
 
 .first-subheader {
-  text-align: center;
+    text-align: center;
 }
 
 .why {
-  font-weight: 500;
-  font-size: 35px;
+    font-weight: 500;
+    font-size: 35px;
 }
 
 .dropdown-content .start-row-flex:hover {
@@ -352,6 +352,18 @@ header {
 
 .icon-holder {
     margin-right: .5vw;
+}
+
+.icon-circle {
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    width: 5vw;
+    height: 5vw;
+    border-radius: 2.5vw;
+}
+
+.icon-circle img {
+    margin: 0 auto;
 }
 
 .splash-title {
