@@ -354,6 +354,20 @@ header {
     margin-right: .5vw;
 }
 
+.flowchart {
+    width: 50vw;
+}
+
+.flowchartbtn {
+    background-color: white;
+    width: 1vw;
+    border-radius: 0.5vw;
+    height: 1vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-top: 2vh;
+}
+
 .icon-circle {
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
