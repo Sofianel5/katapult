@@ -368,6 +368,14 @@ header {
     margin-top: 2vh;
 }
 
+.flowchart-box {
+    background-color: white;
+    width: 50vw;
+    border-radius: 5vw;
+    padding: 5vh 2vw;
+    margin-top: 3vh;
+}
+
 .icon-circle {
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

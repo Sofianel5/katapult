@@ -145,11 +145,13 @@
               data-aos-duration="500">
         <div id="feature-2">
             <div class="full-width center-row-flex">
-                <img class="flowchart" id="flowchart1" src="{% static 'main/katapult_model.png' %}">
-                <img class="flowchart" id="flowchart2" style="display: none" src="{% static 'main/traditional_billboard_model.png' %}">
+                <div class="flowchart-box">
+                    <img class="flowchart" id="flowchart1" src="{% static 'main/katapult_model.png' %}">
+                    <img class="flowchart" id="flowchart2" style="display: none" src="{% static 'main/traditional_billboard_model.png' %}">
+                </div>
             </div>
             <div class="full-width center-row-flex">
-                <div class="flowchartbtn selected" id="btn1"></div>
+                <div class="flowchartbtn selected" style="background-color: #0a207a" id="btn1"></div>
                 <div class="flowchartbtn" id="btn2"></div>
             </div>
         </div>
@@ -158,10 +160,14 @@
     document.getElementById("btn1").onclick = function() {
         document.getElementById("flowchart1").style.display = "block"
         document.getElementById("flowchart2").style.display = "none"
+        document.getElementById("btn1").style.backgroundColor = "#0a207a"
+        document.getElementById("btn2").style.backgroundColor = "white"
     }
     document.getElementById("btn2").onclick = function() {
         document.getElementById("flowchart2").style.display = "block"
         document.getElementById("flowchart1").style.display = "none"
+        document.getElementById("btn2").style.backgroundColor = "#0a207a"
+        document.getElementById("btn1").style.backgroundColor = "white"
     }
     document.querySelector('#submitbtn').onclick = function () {
         var validity = true
