@@ -32,7 +32,7 @@
         <div class="end-row-flex">
         </div>
     </header>
-    <div class="body-root" id="feature-3">
+    <div class="body-root" id="feature-3" style="overflow-x: hidden">
         <div class="center-row-flex">
           <div class="top-header" data-aos="fade-up"
           data-aos-offset="100"
@@ -173,6 +173,13 @@
       <img class="solutions-graphic" data-aos="fade-left" data-aos-offset="200" data-aos-delay="500" data-aos-duration="1500" src="{% static 'main/walkthrough.gif' %}">
     </div>
   </div>
+  <form class="column-start-flex" action="https://api.tracery.us/api/katapult/interest/" method="POST">
+                <input id="email2" type="email" name="email" placeholder="Your work email..." required>
+                <input id="address2" type="text" placeholder="Your property address..." name="address" required>
+                <div class="hunned-width center-row-flex">
+                    <div id="submitbtn2" class="nav-button" style="background-color: #00c2cc; border: none; width: 13vw; text-align: center; margin-top: 2vh">REQUEST</div>
+                </div>
+            </form>
         </div>
     </div>
     <script>
@@ -192,6 +199,35 @@
         var validity = true
         email = document.getElementById('email').value
         address = document.getElementById('address').value
+        if (email == "") {
+            validity = false
+            document.getElementById('email').style.borderColor = "#c30f0f"
+        }
+        if (address == "") {
+            validity = false
+            document.getElementById('address').style.borderColor = "#c30f0f"
+        }
+        if (validity) {
+            var request = new XMLHttpRequest()
+            request.open("POST", "https://api.tracery.us/api/katapult/interest/")
+            request.onload = function() {
+                print(request.body)
+                if (request.status == 200) {
+                    document.getElementById("title").innerHTML = "Success!"
+                } else {
+                    document.getElementById("title").innerHTML = "Failed. Try again."
+                }
+            }
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send('email=' + email + "&address=" + address )
+            document.getElementById("title").innerHTML = "Sending..."
+        }
+
+    }
+    document.querySelector('#submitbtn2').onclick = function () {
+        var validity = true
+        email = document.getElementById('email2').value
+        address = document.getElementById('address2').value
         if (email == "") {
             validity = false
             document.getElementById('email').style.borderColor = "#c30f0f"
